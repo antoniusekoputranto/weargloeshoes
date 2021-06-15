@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Bulan Mei 2021 pada 12.14
+-- Waktu pembuatan: 15 Jun 2021 pada 19.03
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -38,9 +38,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2020_12_05_035751_create_products_table', 1),
-(2, '2020_12_05_042531_add_image_to_products', 2),
-(3, '2020_12_05_054423_add_product_image_to_products', 3);
+(4, '2021_06_13_070209_create_products_table', 1),
+(5, '2021_06_13_080226_create_productcolourimages_table', 1);
 
 -- --------------------------------------------------------
 
@@ -63,7 +62,28 @@ INSERT INTO `orders` (`id`, `user_name`, `product_id`) VALUES
 (15, 'Aziz', 10),
 (16, 'Aziz', 12),
 (17, 'Bagus', 11),
-(18, 'Bagus', 13);
+(18, 'Bagus', 13),
+(21, 'Gloeshoes Admin', 10),
+(22, 'Gloeshoes Admin', 10),
+(23, 'Gloeshoes Admin', 10),
+(24, 'Gloeshoes Admin', 10),
+(25, 'Gloeshoes Admin', 10),
+(26, 'Gloeshoes Admin', 10),
+(27, 'Gloeshoes Admin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `productcolourimages`
+--
+
+CREATE TABLE `productcolourimages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -75,8 +95,12 @@ CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `new_arrival` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `new_arrival` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int(11) NOT NULL,
+  `colour` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `heel_height` int(11) NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -85,12 +109,9 @@ CREATE TABLE `products` (
 -- Dumping data untuk tabel `products`
 --
 
-
-INSERT INTO `products` (`id`, `product_name`, `product_type`, `new_arrival`, `product_image`, `created_at`, `updated_at`) VALUES
-(10, 'Hana heels 7cm dengan sliwer ( by request )\r\nCoklat tua magetan', 'T-Shirt', 'Y', '1607185632.jpg', NULL, NULL),
-(11, 'Sandal by custom\r\nTan pull up leather\r\nSol karet', 'T-Shirt', 'N', '1607165885.jpg', NULL, NULL),
-(12, 'Jodie boots series\r\n7cm heels\r\ntan pull up', 'T-Shirt', 'Y', '1607185722.jpg', NULL, NULL),
-(13, 'Lova oxford heels 5 cm', 'T-Shirt', 'Y', '1607185764.jpg', NULL, NULL);
+INSERT INTO `products` (`id`, `product_name`, `product_type`, `new_arrival`, `product_image`, `price`, `colour`, `heel_height`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'aspatu', 'boots', 'y', '1623755789.jpg', 23000, 'ared', 12, 'adsfadsfadfadf', NULL, NULL),
+(2, 'spatub', 'boots', 'n', '1623755984.jpg', 34000, 'blue', 23, 'adfadfa', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +132,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `phone`, `password`) VALUES
-(5, 'Monochrome Admin', 'admin@gloeshoes', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G');
+(5, 'Gloeshoes Admin', 'admin@gloeshoes', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G'),
+(17, 'eko', 'eko@gmail.com', '00000000', '$2y$10$kxDODg5k.FhVI1YI6QOvwuepVNSeTMQeGAA6y4uBADutpUBmhtwNC');
 
 --
 -- Indexes for dumped tables
@@ -128,6 +150,13 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `productcolourimages`
+--
+ALTER TABLE `productcolourimages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `productcolourimages_product_id_foreign` (`product_id`);
 
 --
 -- Indeks untuk tabel `products`
@@ -149,25 +178,41 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT untuk tabel `productcolourimages`
+--
+ALTER TABLE `productcolourimages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `productcolourimages`
+--
+ALTER TABLE `productcolourimages`
+  ADD CONSTRAINT `productcolourimages_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
