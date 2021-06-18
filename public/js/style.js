@@ -7,12 +7,12 @@
 console.log('eko');
 $(window).scroll(function () {
     if ($(window).scrollTop()) {
-      $(".navbar").addClass("nav-scroll");
-      $(".nav-link").addClass("nav-link-scroll");
+      $("header#header").addClass("nav-scroll");
+      // $(".nav-link").addClass("nav-link-scroll");
       
     } else {
-      $(".navbar").removeClass("nav-scroll");
-      $(".nav-link").removeClass("nav-link-scroll");
+      $("header#header").removeClass("nav-scroll");
+      // $(".nav-link").removeClass("nav-link-scroll");
       
     }
 
