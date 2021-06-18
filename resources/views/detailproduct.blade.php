@@ -1,6 +1,7 @@
 @extends('layout.template')
 
 @section('content')
+
         <style>
             *{
                 padding: 0;
@@ -27,7 +28,7 @@
                 justify-content: flex-end;
             }
 
-            #notification{
+            #notification {
                 width: 100%;
                 position: relative;
             }
@@ -38,11 +39,12 @@
                 padding: 15px 0;
             }
 
-            header{
+            header#header{
                 background-color: #f8f4f1;
+                margin-top: -130px;
             }
 
-            header .header__link a{
+            header#header .header__link a{
                 text-transform: uppercase;
                 text-decoration: none;
                 color: #1c1b1b;
@@ -204,16 +206,16 @@
                 margin-right: 30px;
             }
         </style>
-        <!-- <section id="notification" class="text-center px-3">
+        <section id="notification" class="text-center px-3">
             <h1 class="display-6 text-uppercase">
                 Free shipping for orders over IDR 1.000.000
             </h1>
-        </section> -->
+        </section>
         <br><br><br><br><br>
-        <!-- <header class="container-fluid sticky-top">
+        <header id="header" class="container-fluid sticky-top">
             <div class="row">
                 <div class="col-6 kiri">
-                    <img src="/images/logopng.png" width="75px" alt="" />
+                    <a href="/"><img src="/images/logopng.png" width="75px" alt="" /></a>
                 </div>
                 <div class="col-6 kanan d-flex align-items-center justify-content-end header__link">
                     <a href="#" class="me-4" style="color: #6a6a6a; font-size: 11px;">Account</a>
@@ -232,7 +234,7 @@
                     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link me-4" href="#">Shop</a>
+                            <a class="nav-link me-4" href="/shoes">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-4" href="#">At Dawn</a>
@@ -241,7 +243,7 @@
                             <a class="nav-link me-4" href="#">Encore</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-4" href="#">New Arrivals</a>
+                            <a class="nav-link me-4" href="new_arrival">New Arrivals</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-4" href="#">Cherry</a>
@@ -251,7 +253,7 @@
                 </div>
                 </nav>
             </div>
-        </header> -->
+        </header>
 
         <div class="container">
             <div class="row mt-5">
