@@ -24,9 +24,10 @@
 
    
 
-    @yield('content')
+    @yield('content');
 
-    @include('layout.footbar')
+    <!-- uncomment ini -->
+    <!-- @include('layout.footbar') -->
 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 

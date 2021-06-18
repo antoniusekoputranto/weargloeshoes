@@ -40,10 +40,6 @@ Route::get('/login-register', function () {
     return view('loginregister');
 });
 
-Route::get('/product-1', function () {
-    return view('product_1');
-});
-
 Route::get('/detailproduct', function () {
     return view('detailproduct');
 });
