@@ -2,6 +2,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+#main{
+    margin-top: -128px;
+}
+
 .navbar .nav-link {
     font-size: 14px;
     font-weight: 900;
@@ -47,7 +51,9 @@
 /*Slider*/
 
 .carousel-item {
-    height: 600px;
+    height: 130vh;
+    /* width: 100%; */
+
 }
 
 @media (max-width: 576px) {
@@ -70,17 +76,21 @@
 
 .carousel-image-1 {
     background-image: url("/images/splash.jpg");
-    background-size: contain;
+    background-size: cover;
+    /* width: 100vw; */
+    background-position:50% 60%;
 }
 
 .carousel-image-2 {
     background-image: url("/images/splash2.jpg");
-    /* background-size: cover; */
+    background-size: cover;
+    background-position:50% 60%;
 }
 
 .carousel-image-3 {
     background-image: url("/images/splash3.jpg");
-    /* background-size: cover; */
+    background-size: cover;
+    background-position:50% 60%;
 }
 
 .title-color {

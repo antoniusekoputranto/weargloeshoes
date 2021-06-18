@@ -10,15 +10,13 @@
                 <!-- <div class="invisible">tset</div> -->
                 <!-- <ul class="navbar-nav ml-auto pt-4">
 
-                    @if (Session::has('success'))
                     <li class="nav-item active">
                         <a href="/logout" class="nav-link">Logout</a>
                     </li>
-                    @else
+
                     <li class="nav-item active">
                         <a href="login-register" class="nav-link">Login</a>
                     </li>
-                    @endif
                     <li class="nav-item">
                         <a href="search" class="nav-link">
                             search
@@ -104,6 +102,7 @@
     }
 
     #notification {
+        /* height: 150px; */
         width: 100%;
         position: relative;
     }
@@ -115,9 +114,10 @@
     }
 
     header#header{
-        background-color: transparent;
-        /* margin-top: -130px; */
-        position: absolute;
+        background-color: #f8f4f1;
+        opacity: 0.8;
+        margin-top: -130px;
+        /* position: absolute; */
     }
 
     header#header .header__link a{
@@ -282,7 +282,7 @@
         margin-right: 30px;
     }
 </style>
-<section id="notification" class="text-center px-3">
+<section id="notification" class="text-center ">
     <h1 class="display-6 text-uppercase">
         Free shipping for orders over IDR 1.000.000
     </h1>
@@ -294,10 +294,14 @@
             <a href="/"><img src="/images/logopng.png" width="75px" alt="" /></a>
         </div>
         <div class="col-6 kanan d-flex align-items-center justify-content-end header__link">
-            <a href="#" class="me-4" style="color: #6a6a6a; font-size: 11px;">Account</a>
+            @if (Session::has('success'))
+                <a href="/logout" class="me-4" style="color: #6a6a6a; font-size: 11px;">Logout</a>
+            @else
+                <a href="/login-register" class="me-4" style="color: #6a6a6a; font-size: 11px;">login</a>
+            @endif
+
             <a href="#" class="me-4" style="color: #6a6a6a; font-size: 11px;">Search</a>
             <a href="#" class="me-4">Cart</a>
-            <a href="#" class="me-5">IDR</a>
         </div>
     </div>
 
@@ -313,16 +317,10 @@
                     <a class="nav-link me-4" href="/shoes">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-4" href="#">At Dawn</a>
+                    <a class="nav-link me-4" href="/new_arrival">New Arrivals</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-4" href="#">Encore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-4" href="new_arrival">New Arrivals</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-4" href="#">Cherry</a>
+                    <a class="nav-link me-4" href="/custom">Custom</a>
                 </li>
             </ul>
             </div>

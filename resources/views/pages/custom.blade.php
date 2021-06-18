@@ -3,8 +3,6 @@
 
 @section('content')
 
-<br><br><br><br><br>
-
 <style>
     .custom-catalogue a {
         text-decoration: none;

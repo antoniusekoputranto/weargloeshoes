@@ -2,8 +2,6 @@
 
 @section('content')
 
-<br><br><br><br><br>
-
 <style>
     .reg {
         margin-top: 60px;

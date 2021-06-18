@@ -3,8 +3,6 @@
 
 @section('content')
 
-<br><br><br><br><br>
-
 <style>
     body {
         background-color: #b48967;
