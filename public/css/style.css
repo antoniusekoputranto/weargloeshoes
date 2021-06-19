@@ -156,6 +156,7 @@
 /*Product Section*/
 #products {
     background-color: #b48967;
+    margin-bottom: -50px;
 }
 
 .product-title {

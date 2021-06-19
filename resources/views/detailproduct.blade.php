@@ -401,7 +401,7 @@
             
         </section>
 
-        <footer>
+        {{-- <footer>
             <div class="container">
                 <div class="grid-container">
                     <div class="grid-item">
@@ -435,6 +435,6 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
 
  @endsection
