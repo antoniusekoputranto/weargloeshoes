@@ -140,7 +140,7 @@
         <div class="row">
             <div class="col-10 mx-auto col-sm-6 text-center">
                 <h1 class="text-capitalize product-title">
-                    Shop All
+                    Products
                 </h1>
             </div>
         </div>
