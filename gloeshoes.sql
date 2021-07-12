@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jun 2021 pada 06.51
+-- Waktu pembuatan: 12 Jul 2021 pada 11.18
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -110,8 +110,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_type`, `new_arrival`, `product_image`, `price`, `colour`, `heel_height`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'aspatu', 'boots', 'y', '1623755789.jpg', 23000, 'ared', 12, 'adsfadsfadfadf', NULL, NULL),
-(2, 'spatub', 'boots', 'n', '1623755984.jpg', 34000, 'blue', 23, 'adfadfa', NULL, NULL);
+(2, 'sepatu b', 'boots', 'n', '1623755984.jpg', 550000, 'blue', 23, 'sepatu keluaran terbaru, segera di beli kak', NULL, NULL),
+(4, 'sepatu c', 'wedges', 'y', '1626081299.jpg', 500000, 'black', 22, 'sepatu yang nyaman untuk di gunakan', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,7 @@ ALTER TABLE `productcolourimages`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
