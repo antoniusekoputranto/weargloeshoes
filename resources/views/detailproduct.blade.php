@@ -257,114 +257,115 @@
 
         <div class="container">
             <div class="row mt-5">
-            <div class="col-md-6 col-sm-12">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="./images/1607185632.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./images/1607185764.jpg" class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
 
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img src="./images/1607185632.jpg" class="d-block w-100" alt="...">
+                        <div class="galery-container">
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                                <img src="./images/1607185632.jpg" alt="">
                             </div>
-                            <div class="carousel-item">
-                            <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+                                <img src="./images/1607185722.jpg" alt="">
                             </div>
-                            <div class="carousel-item">
-                            <img src="./images/1607185764.jpg" class="d-block w-100" alt="...">
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+                                <img src="./images/1607185764.jpg" alt="">
                             </div>
-
                         </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
 
-                    <div class="galery-container">
-                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
-                            <img src="./images/1607185632.jpg" alt="">
+                    <section class="product__description col-md-5 offset-md-1 col-sm-12">
+                        <h1 class="py-2">Hana heels</h1>
+                        <h2 class="py-2">Coklat tua magetan</h2>
+                        <h3 class="py-2">RP 450.000</h3>
+                        <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2>
+
+                        <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
+                        <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
+
+                        <div class="row product__size">
+                            <div class="col-6">
+                                <p>Size: </p>
+                            </div>
+                            <div class="col-6 product__size-chart">
+                                <a href="#"><p>Size chart</p></a>
+                            </div>
+
+                            <div class="product__size--table">
+                                <h1>36</h1>
+                                <h1>37</h1>
+                                <h1>38</h1>
+                                <h1>39</h1>
+                                <h1>40</h1>
+                            </div>
                         </div>
-                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
-                            <img src="./images/1607185722.jpg" alt="">
+
+                        <div class="product__button">
+                            <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
+                            <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
                         </div>
-                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
-                            <img src="./images/1607185764.jpg" alt="">
+
+                        <div class="product-information">
+                            <p>Hana heels</p>
+                            <p>Colour : Coklat tua magetan</p>
+                            <p>Heel Height : 7cm dengan silver (by request)</p>
+                            <p>with 1 year warranty</p>
+                            <p>Size Chart</p>
+                            <table class="table mb-5">
+                                <tbody>
+                                    <tr>
+                                    <td>36</td>
+                                    <td>23cm</td>
+                                    </tr>
+                                    <tr>
+                                    <td>37</td>
+                                    <td>23.5cm</td>
+                                    </tr>
+                                    <tr>
+                                    <td>38</td>
+                                    <td>24cm</td>
+                                    </tr>
+                                    <tr>
+                                    <td>39</td>
+                                    <td>24.5cm</td>
+                                    </tr>
+                                    <tr>
+                                    <td>40</td>
+                                    <td>25cm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
+                    </section>
                 </div>
-
-                <section class="product__description col-md-5 offset-md-1 col-sm-12">
-                    <h1 class="py-2">Hana heels</h1>
-                    <h2 class="py-2">Coklat tua magetan</h2>
-                    <h3 class="py-2">RP 450.000</h3>
-                    <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2>
-
-                    <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
-                    <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
-
-                    <div class="row product__size">
-                        <div class="col-6">
-                            <p>Size: </p>
-                        </div>
-                        <div class="col-6 product__size-chart">
-                            <a href="#"><p>Size chart</p></a>
-                        </div>
-
-                        <div class="product__size--table">
-                            <h1>36</h1>
-                            <h1>37</h1>
-                            <h1>38</h1>
-                            <h1>39</h1>
-                            <h1>40</h1>
-                        </div>
-                    </div>
-
-                    <div class="product__button">
-                        <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
-                        <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
-                    </div>
-
-                    <div class="product-information">
-                        <p>Hana heels</p>
-                        <p>Colour : Coklat tua magetan</p>
-                        <p>Heel Height : 7cm dengan silver (by request)</p>
-                        <p>with 1 year warranty</p>
-                        <p>Size Chart</p>
-                        <table class="table mb-5">
-                            <tbody>
-                                <tr>
-                                <td>36</td>
-                                <td>23cm</td>
-                                </tr>
-                                <tr>
-                                <td>37</td>
-                                <td>23.5cm</td>
-                                </tr>
-                                <tr>
-                                <td>38</td>
-                                <td>24cm</td>
-                                </tr>
-                                <tr>
-                                <td>39</td>
-                                <td>24.5cm</td>
-                                </tr>
-                                <tr>
-                                <td>40</td>
-                                <td>25cm</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
             </div>
         </div>
 
