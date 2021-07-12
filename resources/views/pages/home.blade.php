@@ -104,14 +104,13 @@
 
 <!--end of service section-->
 
-<!--Featured Products-->
 <section id="products" class="products py-5">
     <div class="container">
         <!--Section title-->
         <div class="row">
             <div class="col-10 mx-auto col-sm-6 text-center">
                 <h1 class="text-capitalize product-title">
-                    Feature Products
+                    New Arrivals
                 </h1>
             </div>
         </div>
@@ -220,6 +219,123 @@
         <!--End of product items-->
     </div>
 </section>
+
+<!--Featured Products-->
+<section id="products" class="products py-5">
+    <div class="container">
+        <!--Section title-->
+        <div class="row">
+            <div class="col-10 mx-auto col-sm-6 text-center">
+                <h1 class="text-capitalize product-title">
+                    Featured Products
+                </h1>
+            </div>
+        </div>
+        <!--End of section title-->
+        <!--Product items-->
+        {{-- <div class="row products items" id="product-items">
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/images1.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">100</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of single item-->
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/image2.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">500</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--End of single item-->
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/Model1.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">150</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of single item-->
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/image4.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">500</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of single item-->
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/image5.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">330</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of single item-->
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="./images/image6.jpg" alt="" class="card-img-top product-img" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <!-- <h5 id="item-name">Sample Products</h5>
+                            <span><i class="fas fa-dollar-sign">410</i></span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of single item-->
+
+        </div> --}}
+        <!--End of product items-->
+    </div>
+</section>
 <!--End of Featured product-->
 
 <!--about section-->
@@ -227,7 +343,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 text-center">
-                <img src="./images/about.jpg" width="400" height="400" class="img-fluid watch-img" />
+                <img src="./images/logopng.png" width="400" height="400" class="img-fluid watch-img" />
             </div>
             <div class="col-lg-7 text-lg-right text-center text-color about-text">
                 <h1>About us</h1>
