@@ -33,8 +33,8 @@
             <!-- <input type="text" class="form-control" id="product_type" name="product_type" value="{{($p->product_type)}}"> -->
         </div>
         <div class=" form-group">
-            <label for="new_arrival">New Arrival</label>
-            <select class="form-control" id="new_arrival" name="new_arrival" value="{{($p->new_arrival)}}">
+            <label for="featured">Featured</label>
+            <select class="form-control" id="featured" name="featured" value="{{($p->featured)}}">
                 <option value="y" {{ $p->product_type == 'y' ? 'selected="selected"' : '' }}>yes</option>
                 <option value="n" {{ $p->product_type == 'n' ? 'selected="selected"' : '' }}>no</option>
                 <!-- <option value="t-shirt">t-shirt</option>   -->

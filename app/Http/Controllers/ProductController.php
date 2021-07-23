@@ -32,12 +32,13 @@ class ProductController extends Controller
         DB::table('products')->insert([
             'product_name' => $request->product_name,
             'product_type' => $request->product_type,
-            'new_arrival' => $request->new_arrival,
+            'featured' => $request->featured,
             'description' => $request->description,
             'price' => $request->price,
             'colour' => $request->colour,
             'heel_height' => $request->heel_height,
-            'product_image' => $namafoto
+            'product_image' => $namafoto,
+            'created_at' =>  now(),
         ]);
 
         return redirect('/admin/products');
@@ -69,7 +70,7 @@ class ProductController extends Controller
             DB::table('products')->where('id', $request->id)->update([
                 'product_name' => $request->product_name,
                 'product_type' => $request->product_type,
-                'new_arrival' => $request->new_arrival,
+                'featured' => $request->featured,
                 'description' => $request->description,
                 'price' => $request->price,
                 'colour' => $request->colour,
@@ -81,7 +82,7 @@ class ProductController extends Controller
             DB::table('products')->where('id', $request->id)->update([
                 'product_name' => $request->product_name,
                 'product_type' => $request->product_type,
-                'new_arrival' => $request->new_arrival,
+                'featured' => $request->featured,
                 'description' => $request->description,
                 'price' => $request->price,
                 'colour' => $request->colour,

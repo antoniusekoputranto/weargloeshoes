@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productcolourcontroller;
+use App\Http\Controllers\homecontroller;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -18,13 +19,15 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [ homecontroller::class, 'index']);
+
+// function () {
+//     return view('pages.home');
+// });
 
 
 
-Route::get('/cart', [OrderController::class, 'getOrder']);
+Route::get('/cart',[ OrderController::class, 'getOrder']);
 Route::get('/cart/delete/{id}', [OrderController::class, 'deleteOrder']);
 
 
@@ -40,8 +43,10 @@ Route::get('/login-register', function () {
     return view('loginregister');
 });
 
-Route::get('/detailproduct', function () {
-    return view('detailproduct');
+Route::get('/detailproduct/{id}', function ($id) {
+    $product = DB::table('products')->find($id);
+    // dd($products);
+    return view('detailproduct',compact("product"));
 });
 
 Route::get('/register', function () {
@@ -50,7 +55,8 @@ Route::get('/register', function () {
 
 Route::get('/new_arrival', function () {
     if (session('success')) {
-        $products = DB::table('products')->where('new_arrival', 'Y')->get();
+        $products = DB::table('products')->orderBy('created_at','desc')->take(12)->get();
+        // dd($products);
         return view('pages.new_arrival', ['products' => $products]);
     } else {
         return redirect('/login-register');
@@ -59,7 +65,7 @@ Route::get('/new_arrival', function () {
 
 Route::get('/shoes', function () {
     if (session('success')) {
-        $products = DB::table('products')->get();
+        $products = DB::table('products')->paginate(12);
         return view('pages.shoes', ['products' => $products]);
     } else {
         return redirect('/login-register');
@@ -111,6 +117,9 @@ Route::post('auth/login', [AuthController::class, 'login']);
 Route::post('auth/admin_login', [AuthController::class, 'adminLogin']);
 Route::get('/admin/users/delete/{id}', [AuthController::class, 'delete']);
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 
 //Route::get('cart/{id}', [cartController::class, 'getOrder']);
 

@@ -13,7 +13,7 @@
                 <th scope="col">Colour</th>
                 <th scope="col">heel_height</th>
                 <th scope="col">Product Type</th>
-                <th scope="col">New Arrival</th>
+                <th scope="col">Featured</th>
                 <th scope="col">Product Image</th>
                 <th scope="col">price</th>
                 <th scope="col">description</th>
@@ -28,7 +28,7 @@
                 <td>{{$p->colour}}</td>
                 <td>{{$p->heel_height}}</td>
                 <td>{{$p->product_type}}</td>
-                <td>{{$p->new_arrival}}</td>
+                <td>{{$p->featured}}</td>
                 <td><img src="/images/{{$p->product_image}}" width="100" height="100"></td>
                 <td>{{$p->price}}</td>
                 <td>{{$p->description}}</td>

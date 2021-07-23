@@ -112,7 +112,7 @@
 
     .product-bottom {
         width: 70%;
-        height: 50%;
+        /* height: 50%; */
     }
 
     .product-top:hover .overlay {
@@ -150,9 +150,12 @@
             <div class="col-md-4">
                 <div class="product-top mb-5 mt-3">
                     <div class="card single-item">
-                        <div class="img-container">
-                            <img src="./images/{{$p->product_image}}" alt="" class="card-img-top product-img" />
-                        </div>
+                        <a href="/detailproduct/{{$p->id}}">
+                        
+                            <div class="img-container">
+                                <img src="{{asset('/images/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
+                            </div>
+                        </a>
                         <div class="overlay">
                             <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i></button>
                             <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-heart-o"></i></button>
@@ -164,24 +167,29 @@
 
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">{{$p->product_name}} - ID : {{$p->id}}</h5>
-                                <span><i class="fas fa-dollar-sign">5</i></span>
+              <a href="/detailproduct/{{$p->id}}" style="text-decoration: none; color: black">
+            
+                <h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
+            </a>
+                                <span>{{$p->price}}</i></span>
                             </div>
                         </div>
 
-                        <div class="product-bottom ml-3">
+                        {{-- <div class="product-bottom ml-3">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fas fa-star-half"></i>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
             @endforeach
 
         </div>
+        {{ $products ->links() }}
+
 
     </div>
 
