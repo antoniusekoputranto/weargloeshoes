@@ -5,176 +5,6 @@
         box-sizing: border-box;
     }
 
-    .galery-container{
-        display: flex;
-        justify-content: center;
-    }
-
-    .galery-container img{
-        width: 80px;
-        margin: 20px 20px 0 0;
-    }
-
-    body{
-        background-color: #f8f4f1;
-    }
-
-    .kiri {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    #notification {
-        /* height: 150px; */
-        width: 100%;
-        position: relative;
-    }
-
-    #notification h1 {
-        font-size: 12px;
-        background-color: #fdfcee;
-        padding: 15px 0;
-    }
-
-    header#header{
-        background-color: #f8f4f1;
-        opacity: 0.8;
-        margin-top: -130px;
-        /* position: absolute; */
-    }
-
-    header#header .header__link a{
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #1c1b1b;
-        font-size: 12px;
-    }
-
-    .product__description h1{
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: 400;
-        color: #1c1b1b;
-    }
-
-    .product__description h2{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 400;
-        color: #1c1b1b;
-    }
-
-    .product__description h3{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 400;
-        color: #6a6a6a;
-    }
-
-    .product__size-chart{
-        position: relative;
-    }
-
-    .product__size-chart p{
-        position: absolute;
-        right: 50px;
-        color: #6a6a6a;
-        border-bottom: 1px solid #6a6a6a;
-    }
-
-    .product__size{
-        font-size: 14px;
-        padding: 10px 0;
-        margin-bottom: 30px;
-    }
-
-    .product__size--table h1{
-        font-size: 14px;
-        font-weight: 400;
-        display: inline;
-        margin-right: 16px;
-        padding: 10px 12px;
-        border: 1px solid #6a6a6a;
-        color: #6a6a6a;
-    }
-
-    .product__button button, footer button{
-        width: 93%;
-        font-size: 14px;
-        border: 1px solid #d1d1d1;
-        margin-bottom: 20px;
-        padding: 10px 0;
-        background-color: transparent;
-        color: #1c1b1b;
-    }
-
-    .product__button i{
-        color: red;
-        font-size: 16px;
-    }
-
-    .product__button .product__button--primary, footer button{
-        border: 1px solid #cda398;
-        position: relative;
-        transition: all .35s;
-        background-color: #cda398;
-    }
-
-    .product__button .product__button--primary span, footer button span{
-        position: relative;
-        z-index: 2;
-    }
-
-    .product__button .product__button--primary:after, footer button:after{
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: #f8f4f1;
-        transition: all .35s;
-    }
-
-    .product__button .product__button--primary:hover:after, footer button:hover:after{
-        width: 100%;
-    }
-
-    .product-information p{
-        font-size: 16px;
-        color: #1c1b1b;
-        line-height: 23px;
-    }
-
-    .value-proposition{
-        margin-top: 60px;
-        background-color: #f1e9df;
-    }
-
-    .value-proposition h1{
-        font-size: 14px;
-        line-height: 21px;
-        text-align: center;
-        color: rgb(75, 74, 74);
-    }
-
-    .value-proposition .value-proposition__value{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-    }
-
-    .value-proposition .value-proposition__value--value2 h1{
-        max-width: 90%;
-    }
-
-    .value-proposition .value-proposition__value img{
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-
     footer .grid-container{
         display: grid;
         grid-template-columns: 1fr 1.5fr 1fr 1fr 2fr 1fr;
@@ -205,6 +35,43 @@
     footer .grid-container .grid-item i{
         margin-right: 30px;
     }
+
+    .product__button button, footer button{
+        width: 93%;
+        font-size: 14px;
+        border: 1px solid #d1d1d1;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background-color: transparent;
+        color: #1c1b1b;
+    }
+    .product__button .product__button--primary, footer button{
+        border: 1px solid #cda398;
+        position: relative;
+        transition: all .35s;
+        background-color: #cda398;
+    }
+
+    .product__button .product__button--primary span, footer button span{
+        position: relative;
+        z-index: 2;
+    }
+
+    .product__button .product__button--primary:after, footer button:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #f8f4f1;
+        transition: all .35s;
+    }
+
+    .product__button .product__button--primary:hover:after, footer button:hover:after{
+        width: 100%;
+    }
+
 </style>
 
 <footer class="footer">
@@ -236,8 +103,8 @@
         <div class="container">
             <div class="grid-container">
                 <div class="grid-item">
-                    <p>Shop All</p>
-                    <p>New Arrivals</p>
+                    <a href="/shoes" style="text-decoration: none; color: white"><p>Shop All</p></a>
+                    <a href="/new_arrival" style="text-decoration: none; color: white"><p>New Arrivals</p></a>
                     <p>Best Sellers</p>
                     <p>Sale</p>
                 </div>
@@ -251,13 +118,13 @@
                 <div class="grid-item">
                     <p>FAQ</p>
                     <p>Size Guide</p>
-                    <p>About Us</p>
+                    <a href="/aboutus" style="text-decoration: none; color: white"><p>About Us</p></a>
                     <p>Contact Us</p>
                 </div>
                 <div class="grid-item">
                     <p>Follow Us</p>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-instagram"></i>
+                    {{-- <i class="bi bi-facebook"></i> --}}
+                    <a href="https://www.instagram.com/gloeshoes.leather/" style="text-decoration: none; color: white"><i class="bi bi-instagram"></i></a>
                 </div>
                 <div class="grid-item">
                     <p>Join our newsletter to get the latest news</p>

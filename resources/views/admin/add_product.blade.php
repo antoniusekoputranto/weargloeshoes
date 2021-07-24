@@ -30,8 +30,8 @@
             
         </div>
         <div class="form-group">
-            <label for="new_arrival">New Arrival</label>
-            <select class="form-control" id="new_arrival" name="new_arrival">
+            <label for="featured">Featured</label>
+            <select class="form-control" id="featured" name="featured">
                 <option value="y">yes</option>
                 <option value="n">no</option>
                 <!-- <option value="t-shirt">t-shirt</option>   -->

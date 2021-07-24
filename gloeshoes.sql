@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jul 2021 pada 11.18
+-- Waktu pembuatan: 23 Jul 2021 pada 18.14
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -53,24 +53,6 @@ CREATE TABLE `orders` (
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `orders`
---
-
-INSERT INTO `orders` (`id`, `user_name`, `product_id`) VALUES
-(1, 'Budi', 10),
-(15, 'Aziz', 10),
-(16, 'Aziz', 12),
-(17, 'Bagus', 11),
-(18, 'Bagus', 13),
-(21, 'Gloeshoes Admin', 10),
-(22, 'Gloeshoes Admin', 10),
-(23, 'Gloeshoes Admin', 10),
-(24, 'Gloeshoes Admin', 10),
-(25, 'Gloeshoes Admin', 10),
-(26, 'Gloeshoes Admin', 10),
-(27, 'Gloeshoes Admin', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -95,7 +77,7 @@ CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `new_arrival` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `featured` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `colour` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -109,9 +91,11 @@ CREATE TABLE `products` (
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`id`, `product_name`, `product_type`, `new_arrival`, `product_image`, `price`, `colour`, `heel_height`, `description`, `created_at`, `updated_at`) VALUES
-(2, 'sepatu b', 'boots', 'n', '1623755984.jpg', 550000, 'blue', 23, 'sepatu keluaran terbaru, segera di beli kak', NULL, NULL),
-(4, 'sepatu c', 'wedges', 'y', '1626081299.jpg', 500000, 'black', 22, 'sepatu yang nyaman untuk di gunakan', NULL, NULL);
+INSERT INTO `products` (`id`, `product_name`, `product_type`, `featured`, `product_image`, `price`, `colour`, `heel_height`, `description`, `created_at`, `updated_at`) VALUES
+(9, 'sepatu a', 'boots', 'n', '1627019907.jpg', 550000, 'red', 20, 'sepatu terbaik di tempat kami', '2021-07-22 22:58:27', NULL),
+(10, 'sepatu b', 'heels', 'n', '1627020077.jpg', 600000, 'blue', 21, 'sepatu khusus untuk wanita karir', '2021-07-22 23:01:17', NULL),
+(11, 'sepatu c', 'wedges', 'n', '1627020131.jpg', 650000, 'green', 22, 'sepatu terbaik khusus untuk wanita', '2021-07-22 23:02:11', NULL),
+(12, 'sepatu d', 'flat', 'y', '1627020233.jpg', 700000, 'yellow', 23, 'sepatu baru datang dari luar negeri', '2021-07-22 23:03:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -132,8 +116,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `phone`, `password`) VALUES
-(5, 'Gloeshoes Admin', 'admin@gloeshoes', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G'),
-(17, 'eko', 'eko@gmail.com', '00000000', '$2y$10$kxDODg5k.FhVI1YI6QOvwuepVNSeTMQeGAA6y4uBADutpUBmhtwNC');
+(5, 'Gloeshoes Admin', 'admin@gloeshoes', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G');
 
 --
 -- Indexes for dumped tables
@@ -196,7 +179,7 @@ ALTER TABLE `productcolourimages`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
