@@ -6,6 +6,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productcolourcontroller;
 use App\Http\Controllers\homecontroller;
+use App\Http\Controllers\FeedController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -82,8 +85,7 @@ Route::get('/custom', function () {
 
 Route::get('/admin', function () {
     if (session('admin')) {
-        $products = DB::table('products')->get();
-        return view('admin.products', ['products' => $products]);
+        return view ('admin');
     } else {
         return redirect('admin-login');
     }
@@ -112,22 +114,57 @@ Route::post('/add_product', [ProductController::class, 'create']);
 Route::post('/update_product', [ProductController::class, 'update']);
 
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::post('auth/register', [AuthController::class, 'register']);
-Route::post('auth/login', [AuthController::class, 'login']);
-Route::post('auth/admin_login', [AuthController::class, 'adminLogin']);
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/admin_login', [AuthController::class, 'adminLogin']);
 Route::get('/admin/users/delete/{id}', [AuthController::class, 'delete']);
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
-});
+Route::get('/aboutus', [HomeController::class, 'aboutus']);
+
+
+// Route::get('/aboutus', function () {
+//     return view('aboutus');
+// });
 
 //Route::get('cart/{id}', [cartController::class, 'getOrder']);
 
-Route::get('cart/{id}', [OrderController::class, 'insertOrder']);
+Route::get('/cart/{id}', [OrderController::class, 'insertOrder']);
 
-Route::get('admin/products/detail/{id}', [productcolourcontroller::class, 'index']);
-Route::get('admin/products/detail/{id}/add_colour', [productcolourcontroller::class, 'create']);
-Route::post('admin/products/detail/{id}/add_colour/storecolour', [productcolourcontroller::class, 'store']);
-Route::get('admin/products/detail/{id}/edit_colour/{idcolour}', [productcolourcontroller::class, 'edit']);
-Route::post('admin/products/detail/{id}/edit_colour/{idcolour}/updatecolour', [productcolourcontroller::class, 'update']);
-Route::get('admin/products/detail/{id}/delete_colour/{idcolour}', [productcolourcontroller::class, 'destroy']);
+// Route::get('admin/products/detail/{id}', [productcolourcontroller::class, 'index']);
+// Route::get('admin/products/detail/{id}/add_colour', [productcolourcontroller::class, 'create']);
+// Route::post('admin/products/detail/{id}/add_colour/storecolour', [productcolourcontroller::class, 'store']);
+// Route::get('admin/products/detail/{id}/edit_colour/{idcolour}', [productcolourcontroller::class, 'edit']);
+// Route::post('admin/products/detail/{id}/edit_colour/{idcolour}/updatecolour', [productcolourcontroller::class, 'update']);
+// Route::get('admin/products/detail/{id}/delete_colour/{idcolour}', [productcolourcontroller::class, 'destroy']);
+
+
+
+
+// Route::get('/feed', function () {
+//     return view('feed');
+// });
+
+
+
+
+Route::get('/admin/create_feed', [FeedController::class, 'create']);
+Route::post('/admin/create_feed', [FeedController::class, 'store']);
+Route::get('/admin/show_feed', [FeedController::class, 'index']);
+Route::get('/admin/delete_feed/{idfeed}', [FeedController::class, 'destroy']);
+Route::get('/admin/update_feed/{idfeed}', [FeedController::class, 'edit']);
+Route::post('/admin/update_feed/{idfeed}', [FeedController::class, 'update']);
+
+
+
+
+Route::get('/admin/create_event', [EventController::class, 'create']);
+Route::post('/admin/create_event', [EventController::class, 'store']);
+Route::get('/admin/show_event', [EventController::class, 'index']);
+Route::get('/admin/delete_event/{idevent}', [EventController::class, 'destroy']);
+Route::get('/admin/update_event/{idevent}', [EventController::class, 'edit']);
+Route::post('/admin/update_event/{idevent}', [EventController::class, 'update']);
+
+Route::post('/admin/create_account', [AccountController::class, 'store']);
+Route::post('/admin/update_account/{idaccount}', [AccountController::class, 'update']);
+Route::get('/admin/account', [AccountController::class, 'index']);
+

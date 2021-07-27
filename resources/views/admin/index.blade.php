@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/products">PRODUCTS</a>
+                        <a class="nav-link" href="/admin">CHANGE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/users">USERS</a>

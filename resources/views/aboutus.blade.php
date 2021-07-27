@@ -19,7 +19,7 @@
 <div class="container">
 
     <h1 class="judul">ABOUT US</h1>
-    <p>gloeshoes.leather merupakan perusahaan yang bergerak dibidang sepatu kulit custom.</p>
+    <p>{{$accounts->description_company}}</p>
 </div>
 
 @endsection

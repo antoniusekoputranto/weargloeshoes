@@ -21,8 +21,6 @@
 
 </style>
 
-
-
 <div class="container">
     <div class="row">
         <div class="container login col-5">

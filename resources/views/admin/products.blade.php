@@ -3,8 +3,10 @@
 @section('data')
 <div class="container mt-5">
     <!-- <a href="/admin/products/add_size"><button type="button" class="btn btn-primary mb-2">Shoes Size</button></a> -->
-    <a href="/admin/products/add_product_type"><button type="button" class="btn btn-primary mb-2">Product Type</button></a>
+    {{-- <a href="/admin/products/add_product_type"><button type="button" class="btn btn-primary mb-2">Product Type</button></a> --}}
     <a href="/admin/products/add_product"><button type="button" class="btn btn-primary mb-2">Add</button></a>
+    {{-- <a href="/show_feed"><button type="button" class="btn btn-primary mb-2">Feed</button></a> --}}
+
     <table class="table">
         <thead class="thead-light">
             <tr>

@@ -53,7 +53,6 @@
     }
 </style>
 
-
 <div class="container">
     <div class="custom-rules mt-5">
         <h6>Note!</h6>
@@ -111,7 +110,7 @@
 
 <div class="container contact-custom d-flex justify-content-center">
     <p>Contact us</p>
-    <a href="">
+    <a href="https://api.whatsapp.com/send?phone=6285856577395">
         <img src="../images/whatsapp.png" alt="" width="40" height="40">
     </a>
 </div>
