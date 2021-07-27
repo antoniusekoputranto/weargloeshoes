@@ -10,30 +10,31 @@
         justify-content: flex-end;
     }
 
-    #notification {
+    /* #notification { */
         /* height: 150px; */
-        width: 100%;
+        /* width: 100%;
         position: relative;
-    }
+    } */
 
-    #notification h1 {
+    /* #notification h1 {
         font-size: 12px;
         background-color: #fdfcee;
         padding: 15px 0;
-    }
+    } */
 
     header#header{
-        margin-top: -130px;
+        /* position: relative; */
+        /* position: sticky; */
         /* position: absolute; */
     }
-    header#header .bg-color{
+    /* header#header .bg-color{
         position: absolute;
         width: 100%;
         height: 100%;
         background-color: #f8f4f1;
-        opacity: 0;
-        /* position: absolute; */
-    }
+        opacity: 1;
+
+    } */
 
     header#header:hover {
         background-color: #f8f4f1;
@@ -48,12 +49,12 @@
     }
 
 </style>
-<section id="notification" class="text-center ">
+{{-- <section id="notification" class="text-center ">
     <h1 class="display-6 text-uppercase">
         Free shipping for orders over IDR 1.000.000
     </h1>
 </section>
-<br><br><br><br><br>
+<br><br><br><br><br> --}}
 <header id="header" class="container-fluid sticky-top">
     <div class="bg-color"></div>
     <div class="row">
@@ -67,8 +68,8 @@
                 <a href="/login-register" class="me-4">login</a>
             @endif
 
-            <a href="#" class="me-4">Search</a>
-            <a href="#" class="me-4">Cart</a>
+            {{-- <a href="#" class="me-4">Search</a>
+            <a href="#" class="me-4">Cart</a> --}}
         </div>
     </div>
 
@@ -88,6 +89,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-4" href="/custom">Custom</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="/aboutus">About Us</a>
                 </li>
             </ul>
             </div>

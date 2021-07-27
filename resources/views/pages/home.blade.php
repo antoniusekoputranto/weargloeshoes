@@ -1,12 +1,18 @@
 @extends('layout.template')
 
 
+<style>
+  section{
+    background-color: #BFBEBE;
+  }
+</style>
+
 @section('content')
 <style>
 
   #swiper .swiper-container {
     width: 100%;
-    margin-top: -128px;
+    /* margin-top: -128px; */
     height: 100%;
   }
 
@@ -33,13 +39,13 @@
   #swiper .swiper-slide img {
     display: block;
     width: 100vw;
-    height: 143vh;
+    height: 77vh;
     object-fit: cover;
   }
  /* swiper */
 
   #new-arrival .container {
-    margin: 80px auto 100px;
+    margin: 40px auto 100px;
   }
   #new-arrival .display-6 {
     text-align: center;
@@ -54,9 +60,11 @@
     margin-top: 17px;
   }
   #new-arrival .new-arr-content-desc p.jdl{
+    text-align: center;
     font-size: 17px;
   }
   #new-arrival .new-arr-content-desc p.price{
+    text-align: center;
     font-size: 15px;
     margin-top: -12px;
     font-weight: 500;
@@ -126,8 +134,18 @@
   #feed .image img{
     margin-top: 10px;
     width: 24.5vw;
-    height: 24.5vw
+    height: 24.5vw;
   }
+
+  #feed .col-feed{
+    padding: 0px;
+  }
+  #feed .image{
+    padding: 0px;
+    width: 24.5vw;
+    height: 24.5vw;
+  }
+
   #feed .black-hover{
     margin-top: 10px;
     background-color: black;
@@ -209,39 +227,34 @@
 
 
 </style>
+<style>
+  #about-us .container h1{
+    text-align: center;
+    margin: 50px 0px;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  #about-us .container p{
+    text-align: justify;
+    margin: 0px 254px 80px;
+    font-size: 14px;
+  }
+  
+</style>
 
 <section id="swiper">
     
 
     <div class="swiper-container mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="/shoes"><img src="{{asset('/images/splash.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/new_arrival"><img src="{{asset('/images/splash2.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/shoes"><img src="{{asset('/images/splash3.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/new_arrival"><img src="{{asset('/images/splash.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/shoes"><img src="{{asset('/images/splash2.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/new_arrival"><img src="{{asset('/images/splash3.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/shoes"><img src="{{asset('/images/splash.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/new_arrival"><img src="{{asset('/images/splash2.jpg') }}" alt=""></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="/shoes"><img src="{{asset('/images/splash3.jpg') }}" alt=""></a>
-          </div>
+          @foreach ($events as $event1)
+            <div class="swiper-slide">
+              <a href="{{$event1->link}}"><img src="{{asset('/images/event/'.$event1->image_event) }}" alt=""></a>
+            </div>
+          @endforeach
+          
+         
         </div>
         <div class="swiper-pagination"></div>
     </div>
@@ -257,8 +270,45 @@
         dynamicBullets: true,
         },
     });
+    var mySwiper = new Swiper ('.swiper-container', {
+      speed:1000,
+      direction: 'horizontal',
+      navigation: 
+      {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: 
+      {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      zoom: true,
+      keyboard: 
+      {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      // mousewheel: 
+      // {
+      //   invert: true,
+      // },
+      autoplay: 
+      {
+        delay: 4000,
+      },
+      loop: true,
+    }); 
     </script>
 
+</section>
+
+<section id="about-us">
+  <div class="container">
+
+    <h1 class="judul">ABOUT US</h1>
+    <p>{{$accounts->description_company}}</p>
+</div>
 </section>
 
 <section id="new-arrival">
@@ -423,10 +473,24 @@
 </section>
 
 <section id="feed">
-  <div class="container-feed">
+  <div class="container-feed container-fluid">
     <h3 class="display-6">FROM OUR FEED</h3>
     <div class="row mt-5">
-      <div class="col-3 ">
+
+      @foreach ($feeds as $feed1)
+        <div class="col-3 col-feed">
+          <a href="{{$feed1->link}}">
+            <div class="image">
+              <img src="{{asset('/images/feed/'.$feed1->image_feed) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
+
+              {{-- <img src="{{asset('/images/1607185632.jpg') }}" alt=""> --}}
+              {{-- <div class="black-hover"></div> --}}
+            </div>
+          </a>
+        </div>
+      @endforeach
+
+      {{-- <div class="col-3 ">
         <a href="">
           <div class="image">
             <img src="{{asset('/images/1607185632.jpg') }}" alt="">
@@ -481,15 +545,7 @@
             <div class="black-hover"></div>
           </div>
         </a>
-      </div>
-      <div class="col-3 ">
-        <a href="">
-          <div class="image">
-            <img src="{{asset('/images/1607185632.jpg') }}" alt="">
-            <div class="black-hover"></div>
-          </div>
-        </a>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>

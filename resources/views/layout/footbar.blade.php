@@ -5,6 +5,15 @@
         box-sizing: border-box;
     }
 
+    #whatsapp img{
+        /* position: sticky; */
+        margin-left: 98%;
+        margin-bottom: 1%;
+        transform: translateX(-100%);
+        /* width: auto; */
+        /* top: 100px; */
+    }
+
     footer .grid-container{
         display: grid;
         grid-template-columns: 1fr 1.5fr 1fr 1fr 2fr 1fr;
@@ -73,7 +82,10 @@
     }
 
 </style>
-
+<div id="whatsapp" class="fixed-bottom">
+    <a href="https://api.whatsapp.com/send?phone=6285856577395"><img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="50px"></a>
+    {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
+</div>
 <footer class="footer">
     {{-- <div class="text-center py-5">
         <h2 class="py-3">gloeshoes.leather</h2>
@@ -105,33 +117,39 @@
                 <div class="grid-item">
                     <a href="/shoes" style="text-decoration: none; color: white"><p>Shop All</p></a>
                     <a href="/new_arrival" style="text-decoration: none; color: white"><p>New Arrivals</p></a>
-                    <p>Best Sellers</p>
-                    <p>Sale</p>
-                </div>
-                <div class="grid-item">
-                    <p>How to Order</p>
-                    <p>Shipping</p>
-                    <p>Return & Exchanges</p>
-                    <p>Payment Confirmation</p>
-                    <p>Terms of Service</p>  
-                </div>
-                <div class="grid-item">
-                    <p>FAQ</p>
-                    <p>Size Guide</p>
                     <a href="/aboutus" style="text-decoration: none; color: white"><p>About Us</p></a>
-                    <p>Contact Us</p>
+                    {{-- <p>Best Sellers</p>
+                    <p>Sale</p> --}}
                 </div>
                 <div class="grid-item">
                     <p>Follow Us</p>
-                    {{-- <i class="bi bi-facebook"></i> --}}
+                    <a href="https://www.facebook.com/gloeshoes.leather/" style="text-decoration: none; color: white"><i class="bi bi-facebook"></i></a>
                     <a href="https://www.instagram.com/gloeshoes.leather/" style="text-decoration: none; color: white"><i class="bi bi-instagram"></i></a>
+                    {{-- <p>How to Order</p>
+                    <p>Shipping</p>
+                    <p>Return & Exchanges</p>
+                    <p>Payment Confirmation</p>
+                    <p>Terms of Service</p>   --}}
                 </div>
-                <div class="grid-item">
+                {{-- <div class="grid-item">
+                    <p>FAQ</p>
+                    <p>Size Guide</p>
+                    <p>Contact Us</p>
+                </div> --}}
+                {{-- <div class="grid-item">
+                </div> --}}
+                {{-- <div class="grid-item">
                     <p>Join our newsletter to get the latest news</p>
                     <input type="text" placeholder="Enter your email address" class="mt-2">
                     <button type="button" class="button--primary mt-3"> <span> SUBSCRIBE </span> </button>
-                </div>
+                </div> --}}
             </div>
         </div>
+        <div class="container">
+
+            <a href="/" style="text-decoration: none; color: white"><p>Copyright © 2021 Gloeshoes.Leather All Rights Reserved</p></a>
+        </div>
+
+     
     
 </footer>

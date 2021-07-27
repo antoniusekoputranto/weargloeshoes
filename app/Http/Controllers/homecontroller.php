@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\feed;
+use App\Models\event;
+use App\Models\account;
+
+
 use Illuminate\Http\Request;
 
 class homecontroller extends Controller
@@ -17,8 +22,19 @@ class homecontroller extends Controller
         $data['featured'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->first();
         $data['new_arrivals'] =  product::orderBy('created_at','desc')->take(4)->get();
         $data['featureds'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->take(3)->get();
+        $data['feeds'] =  feed::orderBy('created_at','desc')->where('active',1)->take(8)->get();
+        $data['events'] =  event::take(5)->get();
+        $data['accounts'] =  account::first();
         return view('pages.home', $data);
         
+    }
+
+    public function aboutus()
+    {
+        $data['accounts'] =  account::first();
+        return view('aboutus', $data);
+
+
     }
 
     /**
