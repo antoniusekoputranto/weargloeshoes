@@ -20,10 +20,9 @@
             <label for="product_type">Product Type</label>
                 <select  class="form-control" id="product_type" name="product_type" >
                 <!-- <option selected value="shoes">shoes</option> -->
-                <option value="boots" >boots</option>
-                <option value="heels" >heels</option>
-                <option value="wedges" >wedges</option>
-                <option value="flat" >flat</option>
+                @foreach ($ktgr as $item)
+                    <option value="{{$item->post_title}}" >{{$item->post_title}}</option>
+                @endforeach
 
                 <!-- <option value="t-shirt">t-shirt</option>   -->
             </select>

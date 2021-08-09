@@ -8,6 +8,8 @@
     <a href="#" class="btn btn-primary">promo</a>  
     <a href="#" class="btn btn-primary">discount</a>
     <a href="/admin/show_event" class="btn btn-primary">event</a>
-    <a href="/admin/products/add_product_type" class="btn btn-primary">type product</a>
+    <a href="/admin/post" class="btn btn-primary">type product</a>
+    <a href="/admin/sizecartinfo" class="btn btn-primary">sizecartinfo</a>
+    <a href="/admin/show_customerservice" class="btn btn-primary">customerservice</a>
 </div>
 @endSection

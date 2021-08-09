@@ -20,7 +20,7 @@ class FeedController extends Controller
             $feeds = feed::get();
             return view('admin.feed.show_feed', ['feeds' => $feeds]);
 
-//pilih  salah satu ats atau bwh// 
+        //pilih  salah satu ats atau bwh// 
 
             // $data['feeds'] =  feed::get();
             // return view('admin.feed.show_feed', $data);

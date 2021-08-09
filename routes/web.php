@@ -9,6 +9,11 @@ use App\Http\Controllers\homecontroller;
 use App\Http\Controllers\FeedController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SizecartinfoController;
+use App\Http\Controllers\SizecartController;
+use App\Http\Controllers\CustomerserviceController;
+use App\Http\Controllers\detailproduct;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -46,41 +51,45 @@ Route::get('/login-register', function () {
     return view('loginregister');
 });
 
-Route::get('/detailproduct/{id}', function ($id) {
-    $product = DB::table('products')->find($id);
-    // dd($products);
-    return view('detailproduct',compact("product"));
-});
+// Route::get('/detailproduct/{id}', function ($id) {
+//     $product = DB::table('products')->find($id);
+//     dd($products);
+//     return view('detailproduct',compact("product"));
+// });
+Route::get('/detailproduct/{id}', [detailproduct::class, 'index']);
+
+
+
 
 Route::get('/register', function () {
     return view('pages.register');
 });
 
 Route::get('/new_arrival', function () {
-    if (session('success')) {
+    // if (session('success')) {
         $products = DB::table('products')->orderBy('created_at','desc')->take(12)->get();
         // dd($products);
         return view('pages.new_arrival', ['products' => $products]);
-    } else {
-        return redirect('/login-register');
-    }
+    // } else {
+    //     return redirect('/login-register');
+    // }
 });
 
-Route::get('/shoes', function () {
-    if (session('success')) {
-        $products = DB::table('products')->paginate(12);
+Route::get('/shoes/{ktgr?}', function ($ktgr=null) {
+    // if (session('success')) {
+        $products = $ktgr?DB::table('products')->where('product_type',$ktgr)->paginate(12):DB::table('products')->paginate(12);
         return view('pages.shoes', ['products' => $products]);
-    } else {
-        return redirect('/login-register');
-    }
+    // } else {
+    //     return redirect('/login-register');
+    // }
 });
 
 Route::get('/custom', function () {
-    if (session('success')) {
+    // if (session('success')) {
         return view('pages.custom');
-    } else {
-        return redirect('/login-register');
-    }
+    // } else {
+    //     return redirect('/login-register');
+    // }
 });
 
 Route::get('/admin', function () {
@@ -103,10 +112,8 @@ Route::get('/admin/users', function () {
     }
 });
 
-Route::get('/admin/products/add_product', function () {
-    return view('admin.add_product');
-});
 
+Route::get('/admin/products/add_product', [ProductController::class, 'add']);
 Route::get('/admin/products/delete/{id}', [ProductController::class, 'delete']);
 Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit']);
 
@@ -168,3 +175,23 @@ Route::post('/admin/create_account', [AccountController::class, 'store']);
 Route::post('/admin/update_account/{idaccount}', [AccountController::class, 'update']);
 Route::get('/admin/account', [AccountController::class, 'index']);
 
+
+Route::resource('/admin/post', PostController::class);
+
+Route::post('/admin/create_sizecartinfo', [SizecartinfoController::class, 'store']);
+Route::post('/admin/update_sizecartinfo/{idsizecartinfo}', [SizecartinfoController::class, 'update']);
+
+Route::get('/admin/sizecartinfo', [SizecartinfoController::class, 'index']);
+
+Route::get('/admin/sizecartinfo/create_sizecart', [SizecartController::class, 'create']);
+Route::post('/admin/sizecartinfo/create_sizecart', [SizecartController::class, 'store']);
+Route::get('/admin/sizecartinfo/delete_sizecart/{idsizecart}', [SizecartController::class, 'destroy']);
+Route::get('/admin/sizecartinfo/update_sizecart/{idsizecart}', [SizecartController::class, 'edit']);
+Route::post('/admin/sizecartinfo/update_sizecart/{idsizecart}', [SizecartController::class, 'update']);
+
+Route::get('/admin/create_customerservice', [CustomerserviceController::class, 'create']);
+Route::post('/admin/create_customerservice', [CustomerserviceController::class, 'store']);
+Route::get('/admin/show_customerservice', [CustomerserviceController::class, 'index']);
+Route::get('/admin/delete_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'destroy']);
+Route::get('/admin/update_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'edit']);
+Route::post('/admin/update_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'update']);

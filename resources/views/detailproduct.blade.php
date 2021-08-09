@@ -2,14 +2,16 @@
 
 @section('content')
 
-        
-
-
 <style>
     *{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Roboto-Light', sans-serif;
+    background-color: #BFBEBE;
     }
 
     .galery-container{
@@ -40,7 +42,7 @@
         font-size: 16px;
         text-transform: uppercase;
         font-weight: 400;
-        color: #6a6a6a;
+        color: black;
     }
 
     .product__size-chart{
@@ -70,7 +72,7 @@
         color: #6a6a6a;
     }
 
-    .product__button button, footer button{
+    .product__button button{
         width: 93%;
         font-size: 14px;
         border: 1px solid #d1d1d1;
@@ -85,19 +87,19 @@
         font-size: 16px;
     }
 
-    .product__button .product__button--primary, footer button{
+    .product__button .product__button--primary{
         border: 1px solid #cda398;
         position: relative;
         transition: all .35s;
         background-color: #cda398;
     }
 
-    .product__button .product__button--primary span, footer button span{
+    .product__button .product__button--primary span{
         position: relative;
         z-index: 2;
     }
 
-    .product__button .product__button--primary:after, footer button:after{
+    .product__button .product__button--primary:after{
         position: absolute;
         content: "";
         top: 0;
@@ -108,7 +110,7 @@
         transition: all .35s;
     }
 
-    .product__button .product__button--primary:hover:after, footer button:hover:after{
+    .product__button .product__button--primary:hover:after{
         width: 100%;
     }
 
@@ -120,7 +122,7 @@
 
     .value-proposition{
         margin-top: 60px;
-        background-color: #f1e9df;
+        background-color: white;
     }
 
     .value-proposition h1{
@@ -149,151 +151,199 @@
 
 </style>
 
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-6 col-sm-12">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
+<section id="detailproduct">
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="{{asset('/images/'.$product->product_image) }}" class="d-block w-100" alt="...">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 col-sm-12">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        {{-- <div class="carousel-item">
-                        <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
+    
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="{{asset('/images/'.$product->product_image) }}" class="d-block w-100" alt="...">
+                            </div>
+                            {{-- <div class="carousel-item">
+                            <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="./images/1607185764.jpg" class="d-block w-100" alt="...">
+                            </div> --}}
+    
                         </div>
-                        <div class="carousel-item">
-                        <img src="./images/1607185764.jpg" class="d-block w-100" alt="...">
+    
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+    
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+    
+                    <div class="galery-container">
+                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                            <img src="./images/1607185632.jpg" alt="">
+                        </div>
+                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+                            <img src="./images/1607185722.jpg" alt="">
+                        </div>
+                        <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+                            <img src="./images/1607185764.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+    
+                <section class="product__description col-md-5 offset-md-1 col-sm-12">
+                    <h1 class="py-2">{{$product->product_name}}</h1>
+                    <h2 class="py-2">{{$product->colour}}</h2>
+                    <h3 class="py-2">{{$product->price}}</h3>
+                    {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
+    {{-- 
+                    <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
+                    <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="..."> --}}
+    
+                    <div class="row product__size">
+                        {{-- <div class="col-6">
+                            <p>Size: </p>
                         </div> --}}
 
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Size chart
+                          </button>
+                        {{-- <div class="col-6 product__size-chart">
+                            <a href="#"><p>Size chart</p></a>
+                        </div> --}}
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Size chart</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <img src="{{asset('/images/sizecartinfo/'.$sizecartinfo->image)}}" style="width: 850px" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                        {{-- <div class="product__size--table">
+                            <h1>36</h1>
+                            <h1>37</h1>
+                            <h1>38</h1>
+                            <h1>39</h1>
+                            <h1>40</h1>
+                        </div> --}}
                     </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
-                <div class="galery-container">
-                    <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
-                        <img src="./images/1607185632.jpg" alt="">
+    
+                    <div class="product__button">
+                        <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
+                        <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
                     </div>
-                    <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
-                        <img src="./images/1607185722.jpg" alt="">
+    
+                    <div class="product-information">
+                        <p>{{$product->product_name}}</p>
+                        <p>Colour : {{$product->colour}}</p>
+                        <p>Heel Height : {{$product->heel_height}} cm</p>
+                        <p>{{$product->description}}</p>
+                        <p>Size Chart</p>
+                        <table class="table mb-5">
+                            <tbody>
+
+                                @foreach ($sizecarts as $item)
+                                    
+                                <tr>
+                                <td>{{$item->size}}</td>
+                                <td>{{$item->foot_length}}</td>
+                                </tr>
+                                @endforeach
+                                {{-- <tr>
+                                <td>36</td>
+                                <td>21cm</td>
+                                </tr>
+                                <tr>
+                                <td>37</td>
+                                <td>22cm</td>
+                                </tr>
+                                <tr>
+                                <td>38</td>
+                                <td>23cm</td>
+                                </tr>
+                                <tr>
+                                <td>39</td>
+                                <td>24cm</td>
+                                </tr>
+                                <tr>
+                                <td>40</td>
+                                <td>25cm</td>
+                                </tr>
+                                <tr>
+                                <td>41</td>
+                                <td>26cm</td>
+                                </tr>
+                                <tr>
+                                <td>42</td>
+                                <td>27cm</td>
+                                </tr> --}}
+                            </tbody>
+                        </table>
                     </div>
-                    <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
-                        <img src="./images/1607185764.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <section class="product__description col-md-5 offset-md-1 col-sm-12">
-                <h1 class="py-2">{{$product->product_name}}</h1>
-                <h2 class="py-2">{{$product->colour}}</h2>
-                <h3 class="py-2">{{$product->price}}</h3>
-                {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
-{{-- 
-                <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
-                <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="..."> --}}
-
-                {{-- <div class="row product__size">
-                    <div class="col-6">
-                        <p>Size: </p>
-                    </div>
-                    <div class="col-6 product__size-chart">
-                        <a href="#"><p>Size chart</p></a>
-                    </div>
-
-                    <div class="product__size--table">
-                        <h1>36</h1>
-                        <h1>37</h1>
-                        <h1>38</h1>
-                        <h1>39</h1>
-                        <h1>40</h1>
-                    </div>
-                </div> --}}
-
-                <div class="product__button">
-                    <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
-                    <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
-                </div>
-
-                <div class="product-information">
-                    <p>{{$product->product_name}}</p>
-                    <p>Colour : {{$product->colour}}</p>
-                    <p>Heel Height : {{$product->heel_height}}</p>
-                    <p>{{$product->description}}</p>
-                    <p>Size Chart</p>
-                    <table class="table mb-5">
-                        <tbody>
-                            <tr>
-                            <td>36</td>
-                            <td>23cm</td>
-                            </tr>
-                            <tr>
-                            <td>37</td>
-                            <td>23.5cm</td>
-                            </tr>
-                            <tr>
-                            <td>38</td>
-                            <td>24cm</td>
-                            </tr>
-                            <tr>
-                            <td>39</td>
-                            <td>24.5cm</td>
-                            </tr>
-                            <tr>
-                            <td>40</td>
-                            <td>25cm</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-
-<section class="value-proposition">
-    <div class="container">
-        <div class="row">
-            <div class="col-3 value-proposition__value">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/003-credit-card.svg?v=1599466438" width="75px" alt="" srcset="">
-                    <h1>EASY & SECURE PAYMENT</h1>
-                </div>
-                
-            </div>
-            <div class="col-3 value-proposition__value value-proposition__value--value2">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/005-free-delivery.svg?v=1599466438" width="75px" alt="" srcset="">
-                    <h1>FREE SHIPPING ON ORDERS ABOVE 1JT</h1>
-                </div>
-            </div>
-            <div class="col-3 value-proposition__value">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/006-exchange.svg?v=1599466439" width="75px" alt="" srcset="">
-                    <h1>7 DAYS EXCHANGE</h1>
-                </div>
-            </div>
-            <div class="col-3 value-proposition__value">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/007-satisfaction.svg?v=1599466438" width="75px" alt="" srcset="">
-                    <h1>PROUDLY MADE IN INDONESIA</h1>
-                </div>
+                </section>
             </div>
         </div>
     </div>
     
+    <section class="value-proposition">
+        <div class="container">
+            <div class="row">
+                @foreach ($customerservices as $item)
+                <div class="col-3 value-proposition__value">
+                    <div>
+                      
+                            
+                        <img src="{{asset('/images/customerservice/'.$item->image)}}" width="75px" alt="" srcset="">
+                        <h1>{{$item->description_customer_service}}</h1>
+                       
+                    </div>
+                    
+                </div>
+                @endforeach
+                {{-- <div class="col-3 value-proposition__value value-proposition__value--value2">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/005-free-delivery.svg?v=1599466438" width="75px" alt="" srcset="">
+                        <h1>FREE SHIPPING ON ORDERS ABOVE 1JT</h1>
+                    </div>
+                </div>
+                <div class="col-3 value-proposition__value">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/006-exchange.svg?v=1599466439" width="75px" alt="" srcset="">
+                        <h1>7 DAYS EXCHANGE</h1>
+                    </div>
+                </div>
+                <div class="col-3 value-proposition__value">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0444/7544/9499/files/007-satisfaction.svg?v=1599466438" width="75px" alt="" srcset="">
+                        <h1>PROUDLY MADE IN INDONESIA</h1>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+        
+    </section>
 </section>
 
 {{-- <footer>

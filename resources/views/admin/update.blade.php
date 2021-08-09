@@ -22,11 +22,12 @@
         <div class="form-group">
             <label for="product_type">Product Type</label>
                 <select  class="form-control" id="product_type" name="product_type" value="{{($p->product_type)}}">
+
+                    @foreach ($ktgr as $item)
+                    <option value="{{$item->post_title}}" {{ $p->product_type == '$item->post_title' ? 'selected="selected"' : '' }}>{{$item->post_title}}</option>
+                    @endforeach
                 <!-- <option selected value="shoes">shoes</option> -->
-                <option value="boots" {{ $p->product_type == 'boots' ? 'selected="selected"' : '' }}>boots</option>
-                <option value="heels" {{ $p->product_type == 'heels' ? 'selected="selected"' : '' }}>heels</option>
-                <option value="wedges" {{ $p->product_type == 'wedges' ? 'selected="selected"' : '' }}>wedges</option>
-                <option value="flat" {{ $p->product_type == 'flat' ? 'selected="selected"' : '' }}>flat</option>
+                
 
                 <!-- <option value="t-shirt">t-shirt</option>   -->
             </select>

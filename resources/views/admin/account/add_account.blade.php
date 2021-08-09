@@ -32,6 +32,10 @@
             <input class="form-control" type="text" placeholder="Default input" name="link_facebook" aria-label="default input example">
             <h1>link_instagram</h1>
             <input class="form-control" type="text" placeholder="Default input" name="link_instagram" aria-label="default input example">
+            <h1>link_tokopedia</h1>
+            <input class="form-control" type="text" placeholder="Default input" name="link_tokopedia" aria-label="default input example">
+            <h1>link_shopee</h1>
+            <input class="form-control" type="text" placeholder="Default input" name="link_shopee" aria-label="default input example">
             {{-- <h1>active</h1>            
             <select class="form-control" id="active" name="active">
             <option value="1">yes</option>
