@@ -6,6 +6,7 @@ use App\Models\product;
 use App\Models\feed;
 use App\Models\event;
 use App\Models\account;
+use App\Models\Post;
 
 
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class homecontroller extends Controller
         $data['feeds'] =  feed::orderBy('created_at','desc')->where('active',1)->take(8)->get();
         $data['events'] =  event::take(5)->get();
         $data['accounts'] =  account::first();
+        $data['ktgr']= Post::take(3)->get();
         return view('pages.home', $data);
         
     }

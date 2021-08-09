@@ -17,7 +17,10 @@
         <input class="form-control" type="text" placeholder="Default input" name="link_facebook" aria-label="default input example" value="{{($accounts->link_facebook)}}">
         <h1>link_instagram</h1>
         <input class="form-control" type="text" placeholder="Default input" name="link_instagram" aria-label="default input example" value="{{($accounts->link_instagram)}}">
-       
+        <h1>link_tokopedia</h1>
+        <input class="form-control" type="text" placeholder="Default input" name="link_tokopedia" aria-label="default input example" value="{{($accounts->link_tokopedia)}}">
+        <h1>link_shopee</h1>
+        <input class="form-control" type="text" placeholder="Default input" name="link_shopee" aria-label="default input example" value="{{($accounts->link_shopee)}}">
 
         <button type="submit" name="account" class="btn btn-primary mt-3">Submit</button>
     </form>

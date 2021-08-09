@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -52,8 +53,18 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $products = DB::table('products')->where('id', $id)->get();
-        return view('admin.update', ['products' => $products]);
+        $data['products'] = DB::table('products')->where('id', $id)->get();
+        $data['ktgr']= Post::get();
+      
+        return view('admin.update', $data);
+    }
+
+    
+    public function add()
+    {
+        $data['ktgr']= Post::get();
+      
+        return view('admin.add_product', $data);
     }
 
     public function update(Request $request)

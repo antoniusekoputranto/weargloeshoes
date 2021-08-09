@@ -1,12 +1,11 @@
 @extends('layout.template')
 
-
 @section('content')
 
 <style>
     body {
-        background-color: #b48967;
-        font-family: 'Poppins', sans-serif;
+        background-color: #9d9d9d;
+        font-family: 'Roboto-Light', sans-serif;
     }
 
 
@@ -15,7 +14,7 @@
     }
 
     .card {
-        background-color: #b48967;
+        background-color: #9d9d9d;
     }
 
     .card-text {
@@ -192,10 +191,10 @@
 
 </section>
 
-@endSection
-
 <script>
     function showAlert() {
         alert('Item add to shopping cart');
     }
 </script>
+
+@endSection

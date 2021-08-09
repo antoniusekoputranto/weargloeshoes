@@ -5,6 +5,11 @@
         box-sizing: border-box;
     }
 
+    body{
+        font-family: 'Roboto-Light', sans-serif;
+        font-size: 16px;
+    }
+
     #whatsapp img{
         /* position: sticky; */
         margin-left: 98%;
@@ -23,22 +28,25 @@
         padding: 50px 0;
         margin-left: -70px;
         margin-top: 0px;
+        background-color: white;
+        color: black;
+}
     }
 
-    footer input[type=text] {
+    /* footer input[type=text] {
         width: 100%;
         border: 1px solid rgb(197, 195, 195);
         padding: 8px 10px;
-    }
+    } */
 
-    footer ::placeholder {
+    /* footer ::placeholder {
         color: rgb(75, 74, 74);
         font-size: 15px;
-    }
+    } */
 
     footer .grid-container .grid-item p{
         margin: 10px 0;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     footer .grid-container .grid-item i{
@@ -55,10 +63,10 @@
         color: #1c1b1b;
     }
     .product__button .product__button--primary, footer button{
-        border: 1px solid #cda398;
+        border: 1px solid #d1d1d1;
         position: relative;
         transition: all .35s;
-        background-color: #cda398;
+        background-color: white;
     }
 
     .product__button .product__button--primary span, footer button span{
@@ -83,7 +91,7 @@
 
 </style>
 <div id="whatsapp" class="fixed-bottom">
-    <a href="https://api.whatsapp.com/send?phone=6285856577395"><img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="50px"></a>
+    <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}"><img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="50px"></a>
     {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
 </div>
 <footer class="footer">
@@ -115,16 +123,18 @@
         <div class="container">
             <div class="grid-container">
                 <div class="grid-item">
-                    <a href="/shoes" style="text-decoration: none; color: white"><p>Shop All</p></a>
-                    <a href="/new_arrival" style="text-decoration: none; color: white"><p>New Arrivals</p></a>
-                    <a href="/aboutus" style="text-decoration: none; color: white"><p>About Us</p></a>
+                    <a href="/shoes" style="text-decoration: none; color: black"><p>Shop All</p></a>
+                    <a href="/new_arrival" style="text-decoration: none; color: black"><p>New Arrivals</p></a>
+                    <a href="/aboutus" style="text-decoration: none; color: black"><p>About Us</p></a>
                     {{-- <p>Best Sellers</p>
                     <p>Sale</p> --}}
                 </div>
                 <div class="grid-item">
                     <p>Follow Us</p>
-                    <a href="https://www.facebook.com/gloeshoes.leather/" style="text-decoration: none; color: white"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com/gloeshoes.leather/" style="text-decoration: none; color: white"><i class="bi bi-instagram"></i></a>
+                    <a href="{{$akunperusahaan->link_facebook}}" style="text-decoration: none; color: black"><i class="bi bi-facebook"></i></a>
+                    <a href="{{$akunperusahaan->link_instagram}}" style="text-decoration: none; color: black"><i class="bi bi-instagram"></i></a>
+                    <a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 30px" alt=""></a>
+                    <a href="{{$akunperusahaan->link_tokopedia}}"><img src="{{asset('/images/logo/tokopedia.png') }}" style="width: 30px" alt=""></a>
                     {{-- <p>How to Order</p>
                     <p>Shipping</p>
                     <p>Return & Exchanges</p>
@@ -147,7 +157,7 @@
         </div>
         <div class="container">
 
-            <a href="/" style="text-decoration: none; color: white"><p>Copyright © 2021 Gloeshoes.Leather All Rights Reserved</p></a>
+            <a href="/" style="text-decoration: none; color: black"><p>Copyright © 2021 Gloeshoes.Leather All Rights Reserved</p></a>
         </div>
 
      

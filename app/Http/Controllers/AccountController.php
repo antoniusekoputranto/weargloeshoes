@@ -51,7 +51,8 @@ class AccountController extends Controller
                 'link_whatsapp' => $request->link_whatsapp,
                 'link_facebook' => $request->link_facebook,
                 'link_instagram' => $request->link_instagram,
-
+                'link_tokopedia' => $request->link_tokopedia,
+                'link_shopee' => $request->link_shopee,
                 'created_at' =>  now(),
             ]);
     
@@ -100,6 +101,8 @@ class AccountController extends Controller
                 'link_whatsapp' => $request->link_whatsapp,
                 'link_facebook' => $request->link_facebook,
                 'link_instagram' => $request->link_instagram,
+                'link_tokopedia' => $request->link_tokopedia,
+                'link_shopee' => $request->link_shopee,
             ]);
             return redirect('/admin/account');
 

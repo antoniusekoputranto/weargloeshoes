@@ -1,9 +1,14 @@
 @extends('layout.template')
 
-
 @section('content')
 
 <style>
+
+    body{
+        background-color: #bfbebe;
+        font-family: 'Roboto-Light', sans-serif;
+    }
+
     .custom-catalogue a {
         text-decoration: none;
     }
@@ -64,7 +69,6 @@
     </div>
 </div>
 
-
 <div class="container custom mt-5 d-flex justify-content-between overflow-auto">
     <div class="col-md-4 ">
         <div class="custom-catalogue ">
@@ -110,10 +114,9 @@
 
 <div class="container contact-custom d-flex justify-content-center">
     <p>Contact us</p>
-    <a href="https://api.whatsapp.com/send?phone=6285856577395">
+    <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}">
         <img src="../images/whatsapp.png" alt="" width="40" height="40">
     </a>
 </div>
-
 
 @endSection
