@@ -17,7 +17,7 @@ class detailproduct extends Controller
      */
     public function index($id)
     {
-        $data['product'] =  product::first();
+        $data['products'] =  product::where('id',$id)->first();
         $data['sizecartinfo'] =  sizecartinfo::first();
         $data['sizecarts'] =  sizecart::get();
         $data['customerservices'] =  customerservice::get();

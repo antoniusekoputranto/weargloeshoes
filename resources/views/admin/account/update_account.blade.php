@@ -1,13 +1,22 @@
 @extends('admin.index')
 
 @section('data')
+
+{{-- <style>
+    #description_company{
+        height: auto;
+        border: 1px solid black;
+        background-color: aquamarine;
+    }
+</style> --}}
+
 <div class="container">
 
     <h1>account</h1>
     <form action="/admin/update_account/{{$accounts->id}}" method="post" enctype="multipart/form-data">
         @csrf
         <label for="description_company">description_company</label>
-        <textarea type="text" class="form-control" id="description_company" name="description_company">{{($accounts->description_company)}}</textarea>
+        <textarea type="text" class="form-control" id="description_company" style="height: 450px" name="description_company">{{($accounts->description_company)}}</textarea>
         <h1>link_whatsapp</h1>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">+62</span>

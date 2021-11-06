@@ -12,9 +12,9 @@ class product extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-    public function productcolourimages()
+    public function getImage()
     {
-        return $this->hasMany(productcolourimage::class);
+        return $this->hasOne('App\Models\imageproduct');
     }
 
 }

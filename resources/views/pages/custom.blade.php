@@ -27,12 +27,12 @@
 
     }
 
-    .upload {
+    /* .upload {
         margin-top: 40px;
         margin-bottom: 40px;
         border: 2px dotted darkgrey;
         padding: 20px;
-    }
+    } */
 
     .contact-custom {
         margin-bottom: 40px;
@@ -61,24 +61,30 @@
 <div class="container">
     <div class="custom-rules mt-5">
         <h6>Note!</h6>
+        @foreach ($customnotes as $item1)
+            
         <ul>
-            <li>* Hit download button below to get shoes template</li>
-            <li>* After designing your shoes, click upload button</li>
-            <li>* If you want to ask a question, please contact us through our Whatsapp number</li>
+            {{-- <li>* Hit download button below to get shoes template</li>
+            <li>* After designing your shoes, click upload button</li> --}}
+            <li>* {{$item1->description_note}}</li>
         </ul>
+        @endforeach
     </div>
 </div>
 
 <div class="container custom mt-5 d-flex justify-content-between overflow-auto">
+    @foreach ($customtestimonys as $item1)
+        
     <div class="col-md-4 ">
         <div class="custom-catalogue ">
-            <img src="../images/shoes-1.jpg" alt="..." width="300" height="300">
-            <a href="" class="d-flex justify-content-center">
+            <img src="{{asset('/images/custom/customtestimony/'.$item1->image_testimony) }}" alt="..." width="300" height="300">
+            {{-- <a href="" class="d-flex justify-content-center">
                 <button type="button" class="btn btn-dark mt-3 mb-4">Download Template</button>
-            </a>
+            </a> --}}
         </div>
     </div>
-    <div class="col-md-4 ">
+    @endforeach
+    {{-- <div class="col-md-4 ">
         <div class="custom-catalogue ">
             <img src="../images/shoes-2.jpg" alt="..." width="300" height="300">
             <a href="" class="d-flex justify-content-center">
@@ -101,16 +107,16 @@
                 <button type="button" class="btn btn-dark mt-3 mb-4">Download Template</button>
             </a>
         </div>
-    </div>
+    </div> --}}
 </div>
 
-<div class="container upload">
+{{-- <div class="container upload">
     <form action="">
         <p>Upload your custom design here!</p>
         <input type="file" class="form-control-file" id="product_image" name="product_image">
         <button type="button" class="btn btn-dark mt-4">Upload</button>
     </form>
-</div>
+</div> --}}
 
 <div class="container contact-custom d-flex justify-content-center">
     <p>Contact us</p>

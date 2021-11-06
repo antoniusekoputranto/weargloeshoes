@@ -31,12 +31,13 @@
                   @foreach ($events as $event)
                       
                   <tr>
-                    <th scope="row">{{$event->id}}</th>
+                    {{-- <th scope="row">{{$event->id}}</th> --}}
+                    <th scope="row">{{$loop->iteration}}</th>
                     <th><img style="width: 200px" src="{{asset('/images/event/'.$event->image_event) }}" class="card-img-top fade-1" alt="..."></th>
                     <td>{{$event->link}}</td>
                     <td>
                       <a href="/admin/update_event/{{$event->id}}" class="btn btn-warning">update</a>
-                      <a href="/admin/delete_event/{{$event->id}}" class="btn btn-info">delete</a>
+                      <a onclick="return confirm('Are you sure?')" href="/admin/delete_event/{{$event->id}}" class="btn btn-info">delete</a>
                     </td>
                   </tr>
                   @endforeach

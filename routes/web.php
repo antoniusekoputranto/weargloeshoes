@@ -14,6 +14,11 @@ use App\Http\Controllers\SizecartinfoController;
 use App\Http\Controllers\SizecartController;
 use App\Http\Controllers\CustomerserviceController;
 use App\Http\Controllers\detailproduct;
+use App\Http\Controllers\CustomnoteController;
+use App\Http\Controllers\CustomtestimonyController;
+use App\Http\Controllers\custom;
+use App\Http\Controllers\ImageproductController;
+use App\Http\Controllers\imageproductnew;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -57,6 +62,9 @@ Route::get('/login-register', function () {
 //     return view('detailproduct',compact("product"));
 // });
 Route::get('/detailproduct/{id}', [detailproduct::class, 'index']);
+// Route::get('/custom/{id}', [custom::class, 'index']);
+Route::get('/custom', [custom::class, 'index']);
+
 
 
 
@@ -84,13 +92,13 @@ Route::get('/shoes/{ktgr?}', function ($ktgr=null) {
     // }
 });
 
-Route::get('/custom', function () {
-    // if (session('success')) {
-        return view('pages.custom');
-    // } else {
-    //     return redirect('/login-register');
-    // }
-});
+// Route::get('/custom', function () {
+//     if (session('success')) {
+//         return view('pages.custom');
+//     } else {
+//         return redirect('/login-register');
+//     }
+// });
 
 Route::get('/admin', function () {
     if (session('admin')) {
@@ -195,3 +203,25 @@ Route::get('/admin/show_customerservice', [CustomerserviceController::class, 'in
 Route::get('/admin/delete_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'destroy']);
 Route::get('/admin/update_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'edit']);
 Route::post('/admin/update_customerservice/{idcustomerservice}', [CustomerserviceController::class, 'update']);
+
+Route::get('/admin/customnote/create_customnote', [CustomnoteController::class, 'create']);
+Route::post('/admin/customnote/create_customnote', [CustomnoteController::class, 'store']);
+Route::get('/admin/customnote/show_customnote', [CustomnoteController::class, 'index']);
+Route::get('/admin/customnote/delete_customnote/{idcustomnote}', [CustomnoteController::class, 'destroy']);
+Route::get('/admin/customnote/update_customnote/{idcustomnote}', [CustomnoteController::class, 'edit']);
+Route::post('/admin/customnote/update_customnote/{idcustomnote}', [CustomnoteController::class, 'update']);
+
+Route::get('/admin/customtestimony/create_customtestimony', [CustomtestimonyController::class, 'create']);
+Route::post('/admin/customtestimony/create_customtestimony', [CustomtestimonyController::class, 'store']);
+Route::get('/admin/customtestimony/delete_customtestimony/{idcustomtestimony}', [CustomtestimonyController::class, 'destroy']);
+Route::get('/admin/customtestimony/update_customtestimony/{idcustomtestimony}', [CustomtestimonyController::class, 'edit']);
+Route::post('/admin/customtestimony/update_customtestimony/{idcustomtestimony}', [CustomtestimonyController::class, 'update']);
+
+// Route::get('/admin/create_imageproduct', [ImageproductController::class, 'create']);
+// Route::post('/admin/create_imageproduct', [ImageproductController::class, 'store']);
+// Route::get('/admin/show_imageproduct', [ImageproductController::class, 'index']);
+// Route::get('/admin/delete_imageproduct/{idimageproduct}/{imagenumber}', [ImageproductController::class, 'destroy']);
+// Route::get('/admin/update_imageproduct/{idimageproduct}', [ImageproductController::class, 'edit']);
+// Route::post('/admin/update_imageproduct/{idimageproduct}', [ImageproductController::class, 'update']);
+
+Route::get('/admin/show_imageproduct/{id}', [imageproductnew::class, 'index']);

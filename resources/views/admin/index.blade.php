@@ -30,9 +30,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/users">USERS</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">ORDERS</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">LOGOUT</a>
                     </li>

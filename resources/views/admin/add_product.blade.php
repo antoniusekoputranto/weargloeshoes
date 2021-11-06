@@ -36,9 +36,114 @@
                 <!-- <option value="t-shirt">t-shirt</option>   -->
             </select>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="product_image">Product Image</label>
             <input type="file" class="form-control-file" id="product_image" name="product_image">
+        </div> --}}
+
+        <div class="form-group">
+            <label for="thumbnail">thumbnail</label>
+                <select  class="form-control" id="thumbnail" name="thumbnail" >
+                <option selected value="1">image_product_1</option>
+                <option selected value="2">image_product_2</option>
+                <option selected value="3">image_product_3</option>
+  
+
+            </select>
+            
+        </div>
+
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="form-group">
+                <div class="d-flex flex-column bd-highlight mb-3">
+
+                <label for="image_product_1">image_product_1</label>
+
+                <img style="width: 200px; display: none" src="" class="card-img-top fade-1" alt="..." id="output1"/>
+                <br>
+                <input type="file" class="form-control-file" id="image_product_1" name="image_product_1" accept="image/*" onchange="loadFile1(event)">
+          
+                <script>
+                  var loadFile1 = function(event) {
+                    var reader = new FileReader();
+                    reader.onload = function(){
+                      var output = document.getElementById('output1');
+                      output.style.removeProperty("display");
+                      output.src = reader.result;
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                  };
+                </script>
+                </div>
+
+                {{-- <input type="file" class="form-control-file" id="image_product_1" name="image_product_1"> --}}
+            </div>
+
+            {{-- @csrf
+            <h1>image_testimony</h1>
+            <img style="width: 200px; display: none" src="" class="card-img-top fade-1" alt="..." id="output"/>
+            <br>
+            <input type="file" class="form-control-file" id="image_product_1" name="image_product_1" accept="image/*" onchange="loadFile(event)">
+      
+            <script>
+              var loadFile = function(event) {
+                var reader = new FileReader();
+                reader.onload = function(){
+                  var output = document.getElementById('output');
+                  output.style.removeProperty("display");
+                  output.src = reader.result;
+                };
+                reader.readAsDataURL(event.target.files[0]);
+              };
+            </script> --}}
+
+            <div class="form-group">
+                <div class="d-flex flex-column bd-highlight mb-3">
+
+                    <label for="image_product_2">image_product_2</label>
+                    {{-- <input type="file" class="form-control-file" id="image_product_2" name="image_product_2"> --}}
+                    <img style="width: 200px; display: none" src="" class="card-img-top fade-1" alt="..." id="output2"/>
+                    <br>
+                    <input type="file" class="form-control-file" id="image_product_2" name="image_product_2" accept="image/*" onchange="loadFile2(event)">
+              
+                    <script>
+                      var loadFile2 = function(event) {
+                        var reader = new FileReader();
+                        reader.onload = function(){
+                          var output = document.getElementById('output2');
+                          output.style.removeProperty("display");
+                          output.src = reader.result;
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                      };
+                    </script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="d-flex flex-column bd-highlight mb-3">
+
+                    <label for="image_product_3">image_product_3</label>
+                    {{-- <input type="file" class="form-control-file" id="image_product_3" name="image_product_3"> --}}
+                    <img style="width: 200px; display: none" src="" class="card-img-top fade-1" alt="..." id="output3"/>
+                    <br>
+                    <input type="file" class="form-control-file" id="image_product_3" name="image_product_3" accept="image/*" onchange="loadFile3(event)">
+              
+                    <script>
+                      var loadFile3 = function(event) {
+                        var reader = new FileReader();
+                        reader.onload = function(){
+                          var output = document.getElementById('output3');
+                          output.style.removeProperty("display");
+                          output.src = reader.result;
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                      };
+                    </script>
+                </div>
+            </div>
+            {{-- <div class="p-2 bd-highlight">Flex item 1</div>
+            <div class="p-2 bd-highlight">Flex item 2</div>
+            <div class="p-2 bd-highlight">Flex item 3</div> --}}
         </div>
         <div class="form-group">
                 <label for="price">Price</label>
@@ -46,7 +151,7 @@
         </div>
         <div class="form-group">
                 <label for="description">Description</label>
-                <textarea type="text" class="form-control" id="description" name="description"></textarea>
+                <textarea type="text" class="form-control" id="description" style="height: 150px" name="description"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Add</button>
     </form>

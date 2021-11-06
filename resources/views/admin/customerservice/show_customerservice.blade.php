@@ -21,12 +21,13 @@
             @foreach ($customerservices as $customerservice)
                 
             <tr>
-              <th scope="row">{{$customerservice->id}}</th>
+              {{-- <th scope="row">{{$customerservice->id}}</th> --}}
+              <th scope="row">{{$loop->iteration}}</th>
               <th><img style="width: 200px" src="{{asset('/images/customerservice/'.$customerservice->image) }}" class="card-img-top fade-1" alt="..."></th>
               <td>{{$customerservice->description_customer_service}}</td>
                <td>
                 <a href="/admin/update_customerservice/{{$customerservice->id}}" class="btn btn-warning">update</a>
-                <a href="/admin/delete_customerservice/{{$customerservice->id}}" class="btn btn-info">delete</a>
+                <a onclick="return confirm('Are you sure?')" href="/admin/delete_customerservice/{{$customerservice->id}}" class="btn btn-info">delete</a>
               </td>
             </tr>
             @endforeach
