@@ -69,6 +69,12 @@
     margin: 0px -80px;
   }
 
+  #new-arrival .new-arr-content img{
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+  }
+
   #new-arrival .new-arr-content-desc{
     margin-top: 17px;
   }
@@ -222,6 +228,16 @@
       color: black;
   }
 
+  .product__size .btn-primary{
+      width: 93%;
+      font-size: 14px;
+      border: 1px solid #d1d1d1;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: transparent;
+      color: #1c1b1b;
+  }
+
   .product__size-chart{
       position: relative;
   }
@@ -352,7 +368,7 @@
             <div class="new-arr-content" style="width: 18rem;">
               <a href="/detailproduct/{{$new_arrival->id}}">
                 <div class="card">
-                  <img src="{{asset('/images/'.$new_arrival->product_image) }}" class="card-img-top fade-1" alt="...">
+                  <img src="{{asset('/images/product/imageproduct/'.$new_arrival->product_image) }}" class=" fade-1" alt="...">
                   {{-- <img src="{{asset('/images/image5.jpg') }}" class="card-img-top fade-2" alt="..."> --}}
                 </div>
               </a>
@@ -451,9 +467,6 @@
                 <img src="{{asset('/images/'.$featured->product_image) }}" alt="">
               </div>
             </a>
-  
-    
-             
           </div>
           <div class="product__description col-md-5 offset-md-1 col-sm-12">
             <h1 class="py-2">{{$featured->product_name}}</h1>
@@ -525,10 +538,10 @@
               </div> --}}
           </div>
     
-            <div class="product__button">
+            {{-- <div class="product__button">
                 <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
-                {{-- <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button> --}}
-            </div>
+                <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
+            </div> --}}
             <a href="/detailproduct/{{$featured->id}}" style="color: black">View product details</a>
           </div> 
       </div>

@@ -72,6 +72,16 @@
         color: #6a6a6a;
     }
 
+    .product__size .btn-primary{
+        width: 93%;
+        font-size: 14px;
+        border: 1px solid #d1d1d1;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background-color: transparent;
+        color: #1c1b1b;
+    }
+
     .product__button button{
         width: 93%;
         font-size: 14px;
@@ -159,13 +169,13 @@
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> --}}
+                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
                         </div>
     
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="{{asset('/images/'.$product->product_image) }}" class="d-block w-100" alt="...">
+                            <img src="{{asset('/images/'.$products->product_image) }}" class="d-block w-100" alt="...">
                             </div>
                             {{-- <div class="carousel-item">
                             <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
@@ -173,10 +183,9 @@
                             <div class="carousel-item">
                             <img src="./images/1607185764.jpg" class="d-block w-100" alt="...">
                             </div> --}}
-    
                         </div>
     
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
@@ -184,10 +193,10 @@
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
-                        </button>
+                        </button> --}}
                     </div>
     
-                    <div class="galery-container">
+                    {{-- <div class="galery-container">
                         <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
                             <img src="./images/1607185632.jpg" alt="">
                         </div>
@@ -197,13 +206,13 @@
                         <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
                             <img src="./images/1607185764.jpg" alt="">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
     
                 <section class="product__description col-md-5 offset-md-1 col-sm-12">
-                    <h1 class="py-2">{{$product->product_name}}</h1>
-                    <h2 class="py-2">{{$product->colour}}</h2>
-                    <h3 class="py-2">{{$product->price}}</h3>
+                    <h1 class="py-2">{{$products->product_name}}</h1>
+                    <h2 class="py-2">{{$products->colour}}</h2>
+                    <h3 class="py-2">{{$products->price}}</h3>
                     {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
     {{-- 
                     <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
@@ -250,18 +259,24 @@
                         </div> --}}
                     </div>
     
-                    <div class="product__button">
+                    {{-- <div class="product__button">
                         <button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
                         <button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
-                    </div>
+                    </div> --}}
     
                     <div class="product-information">
-                        <p>{{$product->product_name}}</p>
-                        <p>Colour : {{$product->colour}}</p>
-                        <p>Heel Height : {{$product->heel_height}} cm</p>
-                        <p>{{$product->description}}</p>
+                        <p>{{$products->product_name}}</p>
+                        <p>Colour : {{$products->colour}}</p>
+                        <p>Heel Height : {{$products->heel_height}} cm</p>
+                        <p>{{$products->description}}</p>
                         <p>Size Chart</p>
                         <table class="table mb-5">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Size</th>
+                                  <th scope="col">Foot Length(cm)</th>
+                                </tr>
+                              </thead>
                             <tbody>
 
                                 @foreach ($sizecarts as $item)
@@ -313,13 +328,9 @@
                 @foreach ($customerservices as $item)
                 <div class="col-3 value-proposition__value">
                     <div>
-                      
-                            
                         <img src="{{asset('/images/customerservice/'.$item->image)}}" width="75px" alt="" srcset="">
                         <h1>{{$item->description_customer_service}}</h1>
-                       
                     </div>
-                    
                 </div>
                 @endforeach
                 {{-- <div class="col-3 value-proposition__value value-proposition__value--value2">
@@ -381,4 +392,5 @@
         </div>
     </div>
 </footer> --}}
+
 @endsection

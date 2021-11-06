@@ -153,14 +153,14 @@
                                 <img src="{{asset('/images/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
                             </div>
                         </a>
-                        <div class="overlay">
+                        {{-- <div class="overlay">
                             <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i></button>
                             <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-heart-o"></i></button>
                             <a href="/cart/{{$p->id}}">
                                 <button onclick="showAlert()" type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-shopping-cart"></i></button>
                             </a>
 
-                        </div>
+                        </div> --}}
 
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
@@ -191,10 +191,10 @@
 
 </section>
 
-<script>
+{{-- <script>
     function showAlert() {
         alert('Item add to shopping cart');
     }
-</script>
+</script> --}}
 
 @endSection

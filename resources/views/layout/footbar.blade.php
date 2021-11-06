@@ -133,8 +133,8 @@
                     <p>Follow Us</p>
                     <a href="{{$akunperusahaan->link_facebook}}" style="text-decoration: none; color: black"><i class="bi bi-facebook"></i></a>
                     <a href="{{$akunperusahaan->link_instagram}}" style="text-decoration: none; color: black"><i class="bi bi-instagram"></i></a>
-                    <a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 30px" alt=""></a>
-                    <a href="{{$akunperusahaan->link_tokopedia}}"><img src="{{asset('/images/logo/tokopedia.png') }}" style="width: 30px" alt=""></a>
+                    <a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 24px" alt=""></a>
+                    {{-- <a href="{{$akunperusahaan->link_tokopedia}}"><img src="{{asset('/images/logo/tokopedia.png') }}" style="width: 24px" alt=""></a> --}}
                     {{-- <p>How to Order</p>
                     <p>Shipping</p>
                     <p>Return & Exchanges</p>

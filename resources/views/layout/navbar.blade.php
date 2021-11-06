@@ -92,17 +92,31 @@
     
                 <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link me-4" href="/shoes"><i class="bi bi-cart"></i> Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-4" href="/new_arrival"><i class="bi bi-cart4"></i> New Arrivals</a>
+                        <a class="nav-link me-4" href="/new_arrival"><i class="fas fa-shoe-prints"></i></i> New Arrivals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-4" href="/custom"><i class="bi bi-cart2"></i> Custom</a>
+                        <a class="nav-link me-4" href="/custom"><i class="fas fa-palette"></i> Custom</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-4" href="/aboutus"><i class="bi bi-cart3"></i> About Us</a>
+                        <a class="nav-link me-4" href="/aboutus"><img src="{{asset('/images/logo/aboutus.png') }}" style="width: 24px" alt=""></i> About Us</a>
+                    </li> --}}
+
+
+                    <li class="nav-item">
+                        <a class="nav-link me-4" href="/shoes">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4" href="/new_arrival">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4" href="/custom">Custom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4" href="/aboutus">About Us</a>
                     </li>
                 </ul>
                 </div>
