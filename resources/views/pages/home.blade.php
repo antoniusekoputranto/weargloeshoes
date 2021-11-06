@@ -464,7 +464,7 @@
             <a href="/detailproduct/{{$featured->id}}">
             
               <div class="image">
-                <img src="{{asset('/images/'.$featured->product_image) }}" alt="">
+                <img src="{{asset('/images/product/imageproduct/'.$featured->product_image) }}" alt="">
               </div>
             </a>
           </div>
