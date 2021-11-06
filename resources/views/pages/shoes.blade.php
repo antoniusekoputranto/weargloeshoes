@@ -168,7 +168,9 @@
             
                             <h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
                             </a>
-                                <span>{{$p->price}}</i></span>
+                {{-- Rp. {{ number_format($p->price, 0) }} --}}
+
+                                <span>Rp. {{ number_format($p->price, 0) }}</i></span>
                             </div>
                         </div>
 
