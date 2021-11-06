@@ -150,7 +150,7 @@
                         <a href="/detailproduct/{{$p->id}}">
                         
                             <div class="img-container">
-                                <img src="{{asset('/images/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
+                                <img src="{{asset('/images/product/imageproduct/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
                             </div>
                         </a>
                         {{-- <div class="overlay">

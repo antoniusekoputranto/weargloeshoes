@@ -175,7 +175,7 @@
     
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="{{asset('/images/'.$products->product_image) }}" class="d-block w-100" alt="...">
+                            <img src="{{asset('/images/product/imageproduct/'.$products->product_image) }}" class="d-block w-100" alt="...">
                             </div>
                             {{-- <div class="carousel-item">
                             <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
