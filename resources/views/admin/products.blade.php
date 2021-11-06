@@ -19,7 +19,7 @@
                 <th scope="col">Product Type</th>
                 <th scope="col">Featured</th>
                 <th scope="col">Product Image</th>
-                <th scope="col">price</th>
+                <th scope="col" style="width: 10%">price</th>
                 <th scope="col">description</th>
                 <th scope="col" class="text-center" style="width: 15%">Action</th>
             </tr>
@@ -45,8 +45,8 @@
                     
                 </td>
 
-
-                <td>{{$p->price}}</td>
+                <td>Rp. {{ number_format($p->price, 0) }}</td>
+                {{-- <td>{{$p->price}}</td> --}}
                 <td>{{$p->description}}</td>
                 <td>
                     <div class="text-center">
