@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Nov 2021 pada 10.11
+-- Waktu pembuatan: 07 Nov 2021 pada 17.32
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -194,9 +194,6 @@ INSERT INTO `imageproducts` (`id`, `thumbnail`, `product`, `image_product_1`, `i
 (11, 0, 11, '1629188298.katalog2_210518_31.jpg', NULL, NULL, '2021-08-17 01:18:18', '2021-08-17 01:31:37'),
 (12, 0, 135, '1629194129.katalog2_210518_19.jpg', '1629194129.katalog2_210518_24.jpg', NULL, '2021-08-17 02:55:29', NULL),
 (13, 0, 135, '1629196143.katalog2_210518_3.jpg', NULL, NULL, '2021-08-17 03:29:03', NULL),
-(19, 1, 148, '1636176837.katalog1_210518_0.jpg', '1636176837.katalog1_210518_1.jpg', '1636176837.katalog1_210518_2.jpg', '2021-11-05 22:33:57', '2021-11-06 00:46:02'),
-(20, 3, 149, '1636184042.katalog1_210518_6.jpg', '1636184042.katalog1_210518_7.jpg', '1636184042.katalog1_210518_8.jpg', '2021-11-06 00:27:24', '2021-11-06 00:44:18'),
-(22, 2, 151, NULL, '1636184414.katalog1_210518_9.jpg', NULL, '2021-11-06 00:40:14', '2021-11-06 00:44:07'),
 (23, 1, 60, '1628231052.jpg', NULL, NULL, '2021-11-06 01:18:02', NULL),
 (24, 1, 61, '1628231140.jpg', NULL, NULL, '2021-11-06 01:18:02', NULL),
 (25, 1, 62, '1628231267.jpg', NULL, NULL, '2021-11-06 01:18:02', NULL),
@@ -265,7 +262,7 @@ INSERT INTO `imageproducts` (`id`, `thumbnail`, `product`, `image_product_1`, `i
 (88, 1, 131, '1628858811.jpg', NULL, NULL, '2021-11-06 01:18:03', NULL),
 (89, 1, 132, '1628858871.jpg', NULL, NULL, '2021-11-06 01:18:03', NULL),
 (90, 1, 133, '1628858924.jpg', NULL, NULL, '2021-11-06 01:18:03', NULL),
-(91, 1, 134, '1628858974.jpg', '1636186890.katalog1_210518_35.jpg', NULL, '2021-11-06 01:18:03', '2021-11-06 01:22:07');
+(91, 1, 134, '1628858974.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-07 09:17:57');
 
 -- --------------------------------------------------------
 
@@ -424,10 +421,7 @@ INSERT INTO `products` (`id`, `product_name`, `product_type`, `featured`, `produ
 (131, 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 'flat', 'n', '1628858811.jpg', 475000, 'Warna bisa request sendiri', 5, 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', '2021-08-13 05:46:51', NULL),
 (132, 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot', 'boots', 'n', '1628858871.jpg', 550000, 'Bisa custom', 6, 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot \r\nSepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', '2021-08-13 05:47:51', NULL),
 (133, 'Sepatu Boot Kulit - Goodshoes Leather - Mila Boot', 'boots', 'n', '1628858924.jpg', 525000, 'Bisa custom', 7, 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', '2021-08-13 05:48:44', NULL),
-(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'n', '1628858974.jpg', 500000, 'Warna bisa requst sendiri', 4, 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', '2021-08-13 05:49:34', NULL),
-(148, 'a', 'flat', 'y', '1636176837.katalog1_210518_0.jpg', 1, 'a', 1, 'a', '2021-11-05 22:33:57', NULL),
-(149, 'c', 'flat', 'n', '1636184042.katalog1_210518_8.jpg', 3, 'c', 3, 'c', '2021-11-06 00:27:24', NULL),
-(151, 'b', 'flat', 'n', '1636184414.katalog1_210518_9.jpg', 2, 'b', 2, 'b', '2021-11-06 00:40:14', NULL);
+(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'y', '1628858974.jpg', 500000, 'Warna bisa requst sendiri', 4, 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', '2021-08-13 05:49:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -765,7 +759,7 @@ ALTER TABLE `feeds`
 -- AUTO_INCREMENT untuk tabel `imageproducts`
 --
 ALTER TABLE `imageproducts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -789,7 +783,7 @@ ALTER TABLE `productcolourimages`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT untuk tabel `products123`

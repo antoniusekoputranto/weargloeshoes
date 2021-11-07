@@ -170,7 +170,7 @@
                             </a>
                 {{-- Rp. {{ number_format($p->price, 0) }} --}}
 
-                                <span>Rp. {{ number_format($p->price, 0) }}</i></span>
+                                <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</i></span>
                             </div>
                         </div>
 

@@ -381,7 +381,7 @@
                   <p class="jdl" >{{$new_arrival->product_name}} | {{$new_arrival->colour}}</p>
                 </a>
                 {{-- Rp. {{ number_format($p->price, 0) }} --}}
-                <p class="price">Rp. {{ number_format($new_arrival->price, 0) }}</p>
+                <p class="price">Rp. {{ number_format($new_arrival->price, 0, ',', '.') }}</p>
               </div>
             </div>
             {{-- <div class="product-top mb-5 mt-3">
@@ -478,7 +478,7 @@
             <h2 class="py-2">{{$featured->colour}}</h2>
                 {{-- Rp. {{ number_format($p->price, 0) }} --}}
 
-            <h3 class="py-2">Rp. {{ number_format($featured->price, 0) }}</h3>
+            <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
             {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
             {{-- @foreach ($featureds as $item)
             <a href="/detailproduct/{{$item->id}}">

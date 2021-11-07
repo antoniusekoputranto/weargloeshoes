@@ -46,7 +46,7 @@
             {{-- <a href="/admin/update_imageproduct/{{$products->id}}">sda</a> --}}
         {{-- </div> --}}
 
-        <div class="form-group">
+        <div hidden class="form-group">
             <label for="thumbnail">thumbnail</label>
                 <select onchange="thumbnailvalue()" class="form-control" id="thumbnail" name="thumbnail" >
                 <option id="thumbnail1" {{ $image->image_product_1 ? '' : 'disabled'}} {{ $image->thumbnail == '1' ? 'selected="selected"' : '' }} value="1">image_product_1</option>
