@@ -41,7 +41,7 @@
             <input type="file" class="form-control-file" id="product_image" name="product_image">
         </div> --}}
 
-        <div class="form-group">
+        <div hidden class="form-group">
             <label for="thumbnail">thumbnail</label>
                 <select  class="form-control" id="thumbnail" name="thumbnail" >
                 <option selected value="1">image_product_1</option>

@@ -45,7 +45,7 @@
                     
                 </td>
 
-                <td>Rp. {{ number_format($p->price, 0) }}</td>
+                <td>Rp. {{ number_format($p->price, 0, ',', '.') }}</td>
                 {{-- <td>{{$p->price}}</td> --}}
                 <td>{{$p->description}}</td>
                 <td>
