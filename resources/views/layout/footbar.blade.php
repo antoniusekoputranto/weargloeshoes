@@ -157,7 +157,7 @@
         </div>
         <div class="container">
 
-            <a href="/" style="text-decoration: none; color: black"><p>Copyright © 2021 Gloeshoes.Leather All Rights Reserved</p></a>
+            <a href="/" style="text-decoration: none; color: black"><p>Copyright © 2021 Weargloeshoes All Rights Reserved</p></a>
         </div>
 
      
