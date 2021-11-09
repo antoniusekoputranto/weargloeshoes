@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/eb0a527208.js" crossorigin="anonymous"></script>
 
 
-    <title>Gloeshoes.leather</title>
+    <title>Weargloeshoes</title>
 </head>
 
 <body>

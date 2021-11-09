@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Nov 2021 pada 01.43
+-- Waktu pembuatan: 09 Nov 2021 pada 10.58
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gloeshoes`
+-- Database: `weargloeshoes`
 --
 
 -- --------------------------------------------------------
