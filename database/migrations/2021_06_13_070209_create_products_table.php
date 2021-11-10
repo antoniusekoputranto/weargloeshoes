@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('product_image');
             $table->integer('price');
             $table->string('colour');
-            $table->integer('heel_height');
+            $table->string('heel_height');
             $table->longText('description');
             $table->timestamps();
         });

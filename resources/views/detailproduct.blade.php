@@ -275,7 +275,7 @@
                     <div class="product-information">
                         <p>{{$products->product_name}}</p>
                         <p>Colour : {{$products->colour}}</p>
-                        <p>Heel Height : {{$products->heel_height}} cm</p>
+                        <p>Heel Height : {{$products->heel_height}}</p>
                         <p>{{$products->description}}</p>
                         <p>Size Chart</p>
                         <table class="table mb-5">

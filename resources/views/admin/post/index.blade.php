@@ -3,7 +3,7 @@
 @extends('admin.index')
 @section('data')
 <div class="container">
-    <h1>Data Post</h1>
+    <h1>Product Type</h1>
 
     @if(session('success'))
     <p class="alert alert-success">{{ session('success') }}</p>
