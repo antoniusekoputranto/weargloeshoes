@@ -165,12 +165,11 @@
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
                                 <a href="/detailproduct/{{$p->id}}" style="text-decoration: none; color: black">
-                                
                                     <h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
                                 </a>
-                {{-- Rp. {{ number_format($p->price, 0) }} --}}
-                                
+                                <span style="color: red">Rp. 300.000</span>
                                 <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</span>
+                                <span>(10% Off)</span>
                             </div>
                         </div>
 

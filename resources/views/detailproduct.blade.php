@@ -218,12 +218,11 @@
                 <section class="product__description col-md-5 offset-md-1 col-sm-12">
                     <h1 class="py-2">{{$products->product_name}}</h1>
                     <h2 class="py-2">{{$products->colour}}</h2>
-                {{-- Rp. {{ number_format($p->price, 0) }} --}}
-
+                    <h3 class="py-2" style="color: red">Rp. 300.000</h3>
                     <h3 class="py-2">Rp. {{ number_format($products->price, 0, ',', '.') }}</h3>
+                    <h3 class="py-2">(10% Off)</h3>
                     {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
-    {{-- 
-                    <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
+                    {{-- <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
                     <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="..."> --}}
     
                     <div class="row product__size">
