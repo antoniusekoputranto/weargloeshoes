@@ -55,6 +55,7 @@ class EventController extends Controller
     
                 'image_event' => $namafoto,
                 'link' => $request->link,
+                'active' => $request->active,
                 'created_at' =>  now(),
             ]);
     
@@ -114,11 +115,13 @@ class EventController extends Controller
     
                     'image_event' => $namafoto,
                     'link' => $request->link,
+                    'active' => $request->active,
                 ]);
             }
             else {
                 event::find($id)->update([
                     'link' => $request->link,
+                    'active' => $request->active,
                 ]);
             }
     

@@ -7,6 +7,7 @@ use App\Models\product;
 use App\Models\sizecartinfo;
 use App\Models\sizecart;
 use App\Models\customerservice;
+use App\Models\account;
 
 class detailproduct extends Controller
 {
@@ -17,10 +18,11 @@ class detailproduct extends Controller
      */
     public function index($id)
     {
-        $data['products'] =  product::where('id',$id)->first();
+        $data['products'] =  product::where('id',$id)->where('active', 1)->first();
         $data['sizecartinfo'] =  sizecartinfo::first();
-        $data['sizecarts'] =  sizecart::get();
-        $data['customerservices'] =  customerservice::get();
+        $data['sizecarts'] =  sizecart::where('active', 1)->get();
+        $data['customerservices'] =  customerservice::where('active', 1)->get();
+        $data['accounts'] =  account::first();
         return view('detailproduct',$data);
 
  

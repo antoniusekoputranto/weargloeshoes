@@ -20,7 +20,10 @@
                 <th scope="col">Featured</th>
                 <th scope="col">Product Image</th>
                 <th scope="col" style="width: 10%">price</th>
+                <th scope="col">discount</th>
+                {{-- <th scope="col">afterdiscount</th> --}}
                 <th scope="col">description</th>
+                <th scope="col">active</th>
                 <th scope="col" class="text-center" style="width: 15%">Action</th>
             </tr>
         </thead>
@@ -46,12 +49,62 @@
                 </td>
 
                 <td>Rp. {{ number_format($p->price, 0, ',', '.') }}</td>
+                {{-- <td>{{$p->discount}}%</td> --}}
+                <td>
+                    @if($p->discount== null)
+                    @else
+                    {{$p->discount}}%
+                    @endif
+                </td>
+
+                {{-- <td>{{$discountitem}}</td> --}}
                 {{-- <td>{{$p->price}}</td> --}}
                 <td>{{$p->description}}</td>
+                <td>
+                    @if ($p->active == 1)
+                        yes
+                    @else
+                        no
+                    @endif
+                </td>
                 <td>
                     <div class="text-center">
                         <a href="/admin/products/edit/{{$p->id}}"><button type="button" style="width:50px; font-size:10px"class="btn btn-success">Update</button></a>
                         <a onclick="return confirm('Are you sure?')" href="/admin/products/delete/{{$p->id}}"><button type="button" style="width:50px; font-size:10px"class="btn btn-danger">Delete</button></a>
+                        {{-- <a href="/admin/products/discount/{{$p->id}}"><button type="button" style="width:50px; font-size:10px"class="btn btn-success">discount</button></a> --}}
+
+                        <!-- Button trigger modal -->
+                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            discount
+                        </button> --}}
+                        
+                        <!-- Modal -->
+                        <form action="/admin/products/discount/{{$p->id}}" method="GET" enctype="multipart/form-data">
+                           @csrf
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{$p->product_name}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="discount">Discount</label>
+                                        <input type="text" class="form-control" id="discount" name="discount">
+                                        <input type="text" class="form-control" id="productid" name="productid" value="{{$p->id}}" hidden>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+
+
                         <!-- <a href="/admin/products/detail/{{$p->id}}"><button type="button" style="width:50px; font-size:10px"class="btn btn-primary">Detail</button></a> -->
                         <!-- Button trigger modal -->
                         {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

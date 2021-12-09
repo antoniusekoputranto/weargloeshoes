@@ -38,11 +38,18 @@
         color: #1c1b1b;
     }
 
-    .product__description h3{
+    .product__description h3#price{
         font-size: 16px;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         font-weight: 400;
         color: black;
+    }
+
+    .product__description h3#afterprice{
+        font-size: 16px;
+        /* text-transform: uppercase; */
+        font-weight: 400;
+        color: red;
     }
 
     .product__size-chart{
@@ -164,7 +171,18 @@
     border-width: 1px !important;
     border-color: white !important;
 }
-
+    section#order .button-animate{
+        border: 1px solid white;
+        position: relative;
+        transition: all .35s;
+        background-color: white;
+        padding: 10px 45px;
+        font-weight: 300;
+        font-size: 5rem
+        left: 50%;
+        margin-top:30px; 
+        transform: translateX(100%);
+    }
 </style>
 
 <section id="detailproduct">
@@ -218,9 +236,17 @@
                 <section class="product__description col-md-5 offset-md-1 col-sm-12">
                     <h1 class="py-2">{{$products->product_name}}</h1>
                     <h2 class="py-2">{{$products->colour}}</h2>
-                    <h3 class="py-2" style="color: red">Rp. 300.000</h3>
-                    <h3 class="py-2">Rp. {{ number_format($products->price, 0, ',', '.') }}</h3>
-                    <h3 class="py-2">(10% Off)</h3>
+                    {{-- <h3 class="py-2" style="color: red">Rp. 300.000</h3> --}}
+                    @if($products->discount== null)
+                    <h3 id="price" class="py-2">Rp. {{ number_format($products->price, 0, ',', '.') }}</h3>
+                    @else
+                    {{-- <h2 class="py-2">({{$products->price-$products->discount}}% Off)</h2> --}}
+                    {{-- <h3 id="afterprice" class="py-2">Rp. {{$products->price*($products->discount/100)}}<span style="text-decoration: line-through">Rp. {{$products->price}}</span></h3> --}}
+                    <h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($products->price, 0, ',', '.') }}</h3>
+                    {{-- <span style="text-decoration: line-through">Rp. {{$products->price}}</span> --}}
+                    <h3 id="afterprice" class="py-2">Rp. {{number_format($products->price-($products->price*($products->discount/100)), 0, ',', '.')}}</h3>
+                    <h2 class="py-2">({{$products->discount}}% Off)</h2>
+                    @endif
                     {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
                     {{-- <img src="/images/1607185632.jpg" class="img-thumbnail mb-3" width="64px" alt="...">
                     <img src="/images/1607185722.jpg" class="img-thumbnail mb-3" width="64px" alt="..."> --}}
@@ -324,6 +350,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <section id="order">
+                        <a type="button" href='https://api.whatsapp.com/send?phone=62{{$accounts->link_whatsapp}}' style="text-decoration: none; color: black;" class="button-animate"> <span> Order </span> </a>
+                    </section>
                 </section>
             </div>
         </div>

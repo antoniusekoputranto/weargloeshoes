@@ -24,6 +24,7 @@
                   <th scope="col">No</th>
                   <th scope="col">image_event</th>
                   <th scope="col">link</th>
+                  <th scope="col">active</th>
                   <th scope="col">action</th>
                 </tr>
               </thead>
@@ -35,6 +36,13 @@
                     <th scope="row">{{$loop->iteration}}</th>
                     <th><img style="width: 200px" src="{{asset('/images/event/'.$event->image_event) }}" class="card-img-top fade-1" alt="..."></th>
                     <td>{{$event->link}}</td>
+                    <td>
+                      @if ($event->active == 1)
+                          yes
+                      @else
+                          no
+                      @endif
+                    </td>
                     <td>
                       <a href="/admin/update_event/{{$event->id}}" class="btn btn-warning">update</a>
                       <a onclick="return confirm('Are you sure?')" href="/admin/delete_event/{{$event->id}}" class="btn btn-info">delete</a>

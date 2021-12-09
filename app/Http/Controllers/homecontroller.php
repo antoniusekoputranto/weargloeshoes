@@ -7,6 +7,7 @@ use App\Models\feed;
 use App\Models\event;
 use App\Models\account;
 use App\Models\Post;
+use App\Models\article;
 
 
 use Illuminate\Http\Request;
@@ -20,13 +21,14 @@ class homecontroller extends Controller
      */
     public function index()
     {
-        $data['featured'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->first();
-        $data['new_arrivals'] =  product::orderBy('created_at','desc')->take(4)->get();
-        $data['featureds'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->take(3)->get();
-        $data['feeds'] =  feed::orderBy('created_at','desc')->where('active',1)->take(8)->get();
-        $data['events'] =  event::take(5)->get();
+        $data['featured'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->where('active', 1)->first();
+        $data['new_arrivals'] =  product::orderBy('created_at','desc')->where('active', 1)->take(4)->get();
+        $data['featureds'] =  product::where('featured', 'Y')->orderBy('created_at','desc')->where('active', 1)->take(3)->get();
+        $data['feeds'] =  feed::orderBy('created_at','desc')->where('active', 1)->take(8)->get();
+        $data['events'] =  event::where('active', 1)->take(5)->get();
         $data['accounts'] =  account::first();
         $data['ktgr']= Post::take(3)->get();
+        $data['articles']= article::where('active', 1)->take(4)->get();
         return view('pages.home', $data);
         
     }

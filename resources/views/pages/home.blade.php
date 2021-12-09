@@ -225,12 +225,26 @@
       color: #1c1b1b;
   }
 
-  .product__description h3{
+  /* .product__description h3{
       font-size: 16px;
       text-transform: uppercase;
       font-weight: 400;
       color: black;
-  }
+  } */
+
+  .product__description h3#price{
+        font-size: 16px;
+        /* text-transform: uppercase; */
+        font-weight: 400;
+        color: black;
+    }
+
+    .product__description h3#afterprice{
+        font-size: 16px;
+        /* text-transform: uppercase; */
+        font-weight: 400;
+        color: red;
+    }
 
   .product__size .btn-primary{
       width: 93%;
@@ -291,6 +305,98 @@
 
 
   
+</style>
+
+<style>
+  #article .container-feed{
+    margin-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: -80px;
+  }
+  #article .display-6{
+    text-align: center;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+  }
+  #article .image img{
+    margin-top: 10px;
+    width: 24.5vw;
+    height: 24.5vw;
+  }
+  #article .col-feed{
+    padding: 0px;
+  }
+  #article .image{
+    padding: 0px;
+    width: 24.5vw;
+    height: 24.5vw;
+  }
+  #article .black-hover{
+    margin-top: 10px;
+    background-color: black;
+    opacity: 0;
+    top: 0px;
+    width: 24.5vw;
+    height: 24.5vw;
+    position: absolute;
+    transition: 0.3s;
+  }
+  #article .black-hover:hover{
+    opacity: 0.4; 
+  }
+
+  #article .article-content img{
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+  }
+
+  #article .article-content-desc{
+    margin-top: 17px;
+  }
+  #article .article-content-desc p.jdl{
+    text-align: center;
+    font-size: 17px;
+  }
+
+  #article .button-animate, footer button{
+      border: 1px solid white;
+      position: relative;
+      transition: all .35s;
+      background-color: white;
+      padding: 10px 45px;
+      font-weight: 300;
+      font-size: 1.1rem
+  }
+
+  #article .button-animate span, footer button span{
+      position: relative;
+      z-index: 2;
+  }
+
+  #article .button-animate:after, footer button:after{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #f8f4f1;
+      transition: all .35s;
+  }
+
+  #article .button-animate:hover:after, footer button:hover:after{
+      width: 100%;
+  }
+
+  #article .view-all-article{
+    text-align: center;
+    left: 50%;
+    margin-top:30px; 
+    transform: translateX(-50%);
+  }
 </style>
 
 <section id="home">
@@ -357,7 +463,7 @@
     <div class="container">
   
       <h1 class="judul">ABOUT US</h1>
-      <p>{{$accounts->description_company}}</p>
+      <p>{!! $accounts->description_company !!}}</p>
     </div>
   </section>
   
@@ -381,7 +487,9 @@
                   <p class="jdl" >{{$new_arrival->product_name}} | {{$new_arrival->colour}}</p>
                 </a>
                 {{-- Rp. {{ number_format($p->price, 0) }} --}}
-                <p class="price">Rp. {{ number_format($new_arrival->price, 0, ',', '.') }}</p>
+                {{-- <p class="price">Rp. {{ number_format($new_arrival->price, 0, ',', '.') }}</p>
+                <p class="price" style="color:red">Rp. 300.000</p>
+                <p class="price">({{$new_arrival->discount}}% Off)</p> --}}
               </div>
             </div>
             {{-- <div class="product-top mb-5 mt-3">
@@ -476,9 +584,18 @@
           <div class="product__description col-md-5 offset-md-1 col-sm-12">
             <h1 class="py-2">{{$featured->product_name}}</h1>
             <h2 class="py-2">{{$featured->colour}}</h2>
-            <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
-            <h3 class="py-2" style="color:red">Rp. 300.000</h3>
-            <h3 class="py-2">(10% Off)</h3>
+            {{-- <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3> --}}
+            {{-- <h3 class="py-2" style="color:red">Rp. 300.000</h3> --}}
+            {{-- <h2 class="py-2">({{$featured->discount}}% Off)</h2> --}}
+
+            @if($featured->discount== null)
+            <h3 id="price" class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+            @else
+            <h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+            <h3 id="afterprice" class="py-2">Rp. {{number_format($featured->price-($featured->price*($featured->discount/100)), 0, ',', '.')}}</h3>
+            <h2 class="py-2">({{$featured->discount}}% Off)</h2>
+            @endif
+
             {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
             {{-- @foreach ($featureds as $item)
             <a href="/detailproduct/{{$item->id}}">
@@ -554,6 +671,35 @@
       </div>
     </div>
   </section>
+
+  <section id="article">
+    <div class="container-article container-fluid">
+      <h3 class="display-6">ARTICLE</h3>
+      <div class="row mt-5">
+        @foreach ($articles as $article1)
+        <div class="article-content" style="width: 20rem;">
+          <div class="col-3 col-article">
+            <a href="/pages/article/detailarticle/{{$article1->id}}">
+              <div class="image">
+                <img src="{{asset('/images/article/'.$article1->image_article) }}" class="img-thumbnail mb-3" alt="...">     
+              </div>
+            </a>
+          </div>
+          <div class="article-content-desc">
+            <a href="/pages/article/detailarticle/{{$article1->id}}" style="text-decoration: none; color: black">
+              <p class="jdl" >{{$article1->title}}</p>
+            </a>
+          </div>
+        </div>
+        @endforeach
+        <a href="/pages/article/article" style="text-decoration: none; color: black">
+          <button type="button" class="view-all-article button-animate"> <span> View all articles </span> </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+ 
   
   <section id="feed">
     <div class="container-feed container-fluid">

@@ -13,5 +13,6 @@
     <a href="/admin/show_customerservice" class="btn btn-primary">Customer Service</a>
     <a href="/admin/customnote/show_customnote" class="btn btn-primary">Custom</a>
     {{-- <a href="/admin/show_imageproduct" class="btn btn-primary">imageproduct</a> --}}
+    <a href="/admin/show_article" class="btn btn-primary">Article</a>
 </div>
 @endSection

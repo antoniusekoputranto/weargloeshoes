@@ -15,8 +15,8 @@ class custom extends Controller
      */
     public function index()
     {
-        $data['customnotes'] =  customnote::get();
-        $data['customtestimonys'] =  customtestimony::get();
+        $data['customnotes'] =  customnote::where('active', 1)->get();
+        $data['customtestimonys'] =  customtestimony::where('active', 1)->get();
         return view('pages.custom',$data);
     }
 

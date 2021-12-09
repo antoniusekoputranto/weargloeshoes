@@ -24,7 +24,7 @@
 <section id="aboutus">
     <div class="container aboutus">
         <h1 class="judul">ABOUT US</h1>
-        <p>{{$accounts->description_company}}</p>
+        <p>{!! $accounts->description_company !!}</p>
     </div>
 </section>
 @endsection

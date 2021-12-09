@@ -19,6 +19,9 @@ use App\Http\Controllers\CustomtestimonyController;
 use App\Http\Controllers\custom;
 use App\Http\Controllers\ImageproductController;
 use App\Http\Controllers\imageproductnew;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\articlenew;
+use App\Http\Controllers\detailarticle;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -75,7 +78,7 @@ Route::get('/register', function () {
 
 Route::get('/new_arrival', function () {
     // if (session('success')) {
-        $products = DB::table('products')->orderBy('created_at','desc')->take(12)->get();
+        $products = DB::table('products')->orderBy('created_at','desc')->where('active',1)->take(12)->get();
         // dd($products);
         return view('pages.new_arrival', ['products' => $products]);
     // } else {
@@ -85,7 +88,7 @@ Route::get('/new_arrival', function () {
 
 Route::get('/shoes/{ktgr?}', function ($ktgr=null) {
     // if (session('success')) {
-        $products = $ktgr?DB::table('products')->where('product_type',$ktgr)->paginate(12):DB::table('products')->paginate(12);
+        $products = $ktgr?DB::table('products')->where('product_type',$ktgr)->where('active',1)->paginate(12):DB::table('products')->where('active',1)->paginate(12);
         return view('pages.shoes', ['products' => $products]);
     // } else {
     //     return redirect('/login-register');
@@ -124,6 +127,7 @@ Route::get('/admin/users', function () {
 Route::get('/admin/products/add_product', [ProductController::class, 'add']);
 Route::get('/admin/products/delete/{id}', [ProductController::class, 'delete']);
 Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit']);
+Route::get('/admin/products/discount/{id}', [ProductController::class, 'discount']);
 
 Route::post('/add_product', [ProductController::class, 'create']);
 Route::post('/update_product', [ProductController::class, 'update']);
@@ -225,3 +229,31 @@ Route::post('/admin/customtestimony/update_customtestimony/{idcustomtestimony}',
 // Route::post('/admin/update_imageproduct/{idimageproduct}', [ImageproductController::class, 'update']);
 
 Route::get('/admin/show_imageproduct/{id}', [imageproductnew::class, 'index']);
+
+Route::get('/admin/create_article', [ArticleController::class, 'create']);
+Route::post('/admin/create_article', [ArticleController::class, 'store']);
+Route::get('/admin/show_article', [ArticleController::class, 'index']);
+Route::get('/admin/delete_article/{idarticle}', [ArticleController::class, 'destroy']);
+Route::get('/admin/update_article/{idarticle}', [ArticleController::class, 'edit']);
+Route::post('/admin/update_article/{idarticle}', [ArticleController::class, 'update']);
+
+Route::get('/pages/article/article', [articlenew::class, 'index']);
+Route::get('/pages/article/detailarticle/{id}', [detailarticle::class, 'index']);
+
+
+// Route::get('/pages/article/article', function () {
+//     $articles = DB::table('products')->orderBy('created_at','desc')->take(12)->get();
+//     return view('pages.new_arrival', ['products' => $products]);
+// });
+
+
+// Route::get('/pages/article/article', function () {
+//     return view('pages.article.article');
+// });
+
+// Route::get('/pages/article/detailarticle/{id}', [detailproduct::class, 'index']);
+
+
+// Route::get('/pages/article/detailarticle', function () {
+//     return view('pages.article.detailarticle');
+// });

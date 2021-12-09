@@ -150,9 +150,18 @@
                 <input type="text" class="form-control" id="price" name="price">
         </div>
         <div class="form-group">
+                <label for="discount">discount</label>
+                <input type="number" class="form-control" id="discount" name="discount"  min="1" max="50">
+        </div>
+        <div class="form-group">
                 <label for="description">Description</label>
                 <textarea type="text" class="form-control" id="description" style="height: 150px" name="description"></textarea>
         </div>
+        <h1>active</h1>            
+        <select class="form-control" id="active" name="active">
+        <option value="1">yes</option>
+        <option value="0">no</option>
+        </select>
         <button type="submit" class="btn btn-primary mt-3">Add</button>
     </form>
 </div>

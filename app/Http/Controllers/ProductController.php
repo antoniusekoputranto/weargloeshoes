@@ -28,8 +28,10 @@ class ProductController extends Controller
             'featured' => $request->featured,
             'description' => $request->description,
             'price' => $request->price,
+            'discount' => $request->discount,
             'colour' => $request->colour,
             'heel_height' => $request->heel_height,
+            'active' => $request->active,
             'created_at' =>  now(),
         ]);
         $tujuan_upload = 'images/product/imageproduct';
@@ -104,6 +106,21 @@ class ProductController extends Controller
         
     }
 
+    public function discount(Request $request)
+    {
+dd($request);
+
+        DB::table('products')->where('id', $request->productid)->update([
+            
+            'discount' => $request->discount,
+            
+        ]);
+        return redirect('/admin/products');
+
+    }
+
+
+
     public function delete($id)
     {
         DB::table('products')->where('id', $id)->delete();
@@ -145,8 +162,10 @@ class ProductController extends Controller
                 'featured' => $request->featured,
                 'description' => $request->description,
                 'price' => $request->price,
+                'discount' => $request->discount,
                 'colour' => $request->colour,
                 'heel_height' => $request->heel_height,
+                'active' => $request->active,
             ]);
         // }
         // else {
@@ -233,4 +252,25 @@ class ProductController extends Controller
             'product_image' => $thumbnail]);
         return redirect('/admin/products');
     }
+
+    // public function discount_price(Request $request){
+    //     $itemnew = DB::all()->toArray();
+    //     $discountitem = array();
+    //     for ($i=0; $i < sizeof($itemnew); $i++) {
+    //         $temp = [
+    //             'product_name'=>$itemnew[$i]['product_name'],
+    //             'price'=>$itemnew[$i]['price'],
+    //             'discount'=>$itemnew[$i]['discount'],
+    //             'afterdiscount'=>$itemnew[$i]['price']-($itemnew[$i]['discount']*$itemnew[$i]['price']),
+    //         ];
+    //         array_push($temp);
+    //     }
+    
+    //     $data=[
+    //         'products'=>$discountitem
+    //     ];
+    
+    //     return view('admin.products',$data);
+    
+    // }
 }

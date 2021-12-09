@@ -23,6 +23,11 @@
         </script>
         <h1>link</h1>
         <input class="form-control" type="text" placeholder="Default input" name="link" aria-label="default input example">
+        <h1>active</h1>            
+        <select class="form-control" id="active" name="active">
+        <option value="1">yes</option>
+        <option value="0">no</option>
+        </select>
         <button type="submit" name="event" class="btn btn-primary mt-3">Submit</button>
     </form>
 </div>
