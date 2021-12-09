@@ -239,9 +239,18 @@
             <input type="text" class="form-control" id="price" name="price" value="{{($products->price)}}">
         </div>
         <div class="form-group">
+            <label for="discount">discount</label>
+            <input type="number" class="form-control" id="discount" name="discount" min="1" max="50" value="{{($products->discount)}}">
+        </div>
+        <div class="form-group">
             <label for="description">description</label>
             <textarea type="text" class="form-control" id="description" style="height: 150px" name="description" >{{($products->description)}}</textarea> 
         </div>
+        <h1>active</h1>            
+        <select class="form-control" id="active" name="active" value="{{($products->active)}}">
+        <option value="1" {{ $products->active == '1' ? 'selected="selected"' : '' }}>yes</option>
+        <option value="0" {{ $products->active == '0' ? 'selected="selected"' : '' }}>no</option>
+        </select>
         <button type="submit" class="btn btn-success mt-3">Update</button>
     </form>
 </div>

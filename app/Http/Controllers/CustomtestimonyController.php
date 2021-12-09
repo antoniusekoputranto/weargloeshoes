@@ -49,6 +49,7 @@ class CustomtestimonyController extends Controller
             customtestimony::insert([
     
                 'image_testimony' => $namafoto,
+                'active' => $request->active,
                 'created_at' =>  now(),
             ]);
     
@@ -97,15 +98,30 @@ class CustomtestimonyController extends Controller
     {
         if (session('admin')) {
 
-            $file = $request->file('image_testimony');
-            $tujuan_upload = 'images/custom/customtestimony';
-            $namafoto = time() . '.' . $file->getClientOriginalExtension();
-            $file->move($tujuan_upload, $namafoto);
+            if ($request->hasFile('image_testimony')) {
 
-            customtestimony::find($id)->update([
+
+                $file = $request->file('image_testimony');
+                $tujuan_upload = 'images/custom/customtestimony';
+                $namafoto = time() . '.' . $file->getClientOriginalExtension();
+                $file->move($tujuan_upload, $namafoto);
+
+                customtestimony::find($id)->update([
 
                 'image_testimony' => $namafoto,
-            ]);
+                'active' => $request->active,
+
+                ]);
+
+            }
+            else {
+                customtestimony::find($id)->update([
+
+                'active' => $request->active,
+
+                ]);
+            }
+
     
             return redirect('/admin/customnote/show_customnote');
         } else {

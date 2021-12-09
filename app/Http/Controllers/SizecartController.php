@@ -45,6 +45,7 @@ class SizecartController extends Controller
     
                 'size' => $request->size,
                 'foot_length' => $request->foot_length,
+                'active' => $request->active,
                 'created_at' =>  now(),
             ]);
     
@@ -96,6 +97,7 @@ class SizecartController extends Controller
 
                 'size' => $request->size,
                 'foot_length' => $request->foot_length,
+                'active' => $request->active,
             ]);
      
             return redirect('/admin/sizecartinfo');

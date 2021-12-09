@@ -35,17 +35,24 @@
           <th scope="col">No</th>
           <th scope="col">size</th>
           <th scope="col">foot_length</th>
+          <th scope="col">active</th>
           <th scope="col">action</th>
         </tr>
       </thead>
       <tbody>
           @foreach ($sizecarts as $sizecart)
-              
           <tr>
             {{-- <th scope="row">{{$sizecart->id}}</th> --}}
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$sizecart->size}}</td>
             <td>{{$sizecart->foot_length}}</td>
+            <td>
+              @if ($sizecart->active == 1)
+                  yes
+              @else
+                  no
+              @endif
+            </td>
             <td>
               <a href="/admin/sizecartinfo/update_sizecart/{{$sizecart->id}}" class="btn btn-warning">update</a>
               <a onclick="return confirm('Are you sure?')" href="/admin/sizecartinfo/delete_sizecart/{{$sizecart->id}}" class="btn btn-info">delete</a>

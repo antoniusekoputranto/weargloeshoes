@@ -129,6 +129,34 @@
         padding: 20px;
         border-top: 4px solid black;
     }
+
+    .card-body h1{
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #1c1b1b;
+    }
+
+    .card-body h2{
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #1c1b1b;
+    }
+
+    .card-body h3#price{
+        font-size: 16px;
+        /* text-transform: uppercase; */
+        font-weight: 400;
+        color: black;
+    }
+
+    .card-body h3#afterprice{
+        font-size: 16px;
+        /* text-transform: uppercase; */
+        font-weight: 400;
+        color: red;
+    }
 </style>
 
 <section id="products" class="products py-5">
@@ -167,9 +195,18 @@
                                 <a href="/detailproduct/{{$p->id}}" style="text-decoration: none; color: black">
                                     <h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
                                 </a>
-                                <span style="color: red">Rp. 300.000</span>
-                                <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</span>
-                                <span>(10% Off)</span>
+                                {{-- <span style="color: red">Rp. 300.000</span> --}}
+                                {{-- <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</span>
+                                <span>({{$p->discount}}% Off)</span> --}}
+                            </div>
+                            <div id="price">
+                                @if($p->discount== null)
+                                <h3 id="price" class="py-2">Rp. {{ number_format($p->price, 0, ',', '.') }}</h3>
+                                @else
+                                <h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($p->price, 0, ',', '.') }}</h3>
+                                <h3 id="afterprice" class="py-2">Rp. {{number_format($p->price-($p->price*($p->discount/100)), 0, ',', '.')}}</h3>
+                                <h2 class="py-2">({{$p->discount}}% Off)</h2>
+                                @endif
                             </div>
                         </div>
 

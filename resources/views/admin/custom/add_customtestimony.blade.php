@@ -10,7 +10,6 @@
       <img style="width: 200px; display: none" src="" class="card-img-top fade-1" alt="..." id="output"/>
       <br>
       <input type="file" class="form-control-file" id="image_testimony" name="image_testimony" accept="image/*" onchange="loadFile(event)">
-
       <script>
         var loadFile = function(event) {
           var reader = new FileReader();
@@ -22,7 +21,11 @@
           reader.readAsDataURL(event.target.files[0]);
         };
       </script>
-
+     <h1>active</h1>            
+     <select class="form-control" id="active" name="active">
+     <option value="1">yes</option>
+     <option value="0">no</option>
+     </select>
       <button type="submit" name="customtestimony" class="btn btn-primary mt-3">Submit</button>
   </form>
 </div>

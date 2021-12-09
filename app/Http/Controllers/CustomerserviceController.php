@@ -59,6 +59,7 @@ class CustomerserviceController extends Controller
     
                 'image' => $namafoto,
                 'description_customer_service' => $request->description_customer_service,
+                'active' => $request->active,
                 'created_at' =>  now(),
             ]);
     
@@ -118,11 +119,15 @@ class CustomerserviceController extends Controller
     
                     'image' => $namafoto,
                     'description_customer_service' => $request->description_customer_service,
+                    'active' => $request->active,
+
                 ]);
             }
             else {
                 customerservice::find($id)->update([
                     'description_customer_service' => $request->description_customer_service,
+                    'active' => $request->active,
+
                 ]);
             }
     

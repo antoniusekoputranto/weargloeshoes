@@ -50,6 +50,7 @@ class CustomnoteController extends Controller
         if (session('admin')) {    
             customnote::insert([
                 'description_note' => $request->description_note,
+                'active' => $request->active,
                 'created_at' =>  now(),
             ]);
     
@@ -98,6 +99,7 @@ class CustomnoteController extends Controller
         if (session('admin')) {
             customnote::find($id)->update([
                 'description_note' => $request->description_note,
+                'active' => $request->active,
             ]);
     
             return redirect('/admin/customnote/show_customnote');
