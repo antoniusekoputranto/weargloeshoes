@@ -54,6 +54,17 @@ class AuthController extends Controller
     public function login(Request $request)
     {
 
+        // $request->validate(
+        //     [
+        //         'email' => 'required',
+        //         'password' => 'required|min:10',
+        //     ],
+        //     [
+        //         'email.required' => 'Please input your email',
+        //         'password.required' => 'Please input your password',
+        //     ]
+        // );
+
         $log = DB::table('users')->where('email', $request->email)->first();
         // $user = Auth::id();
         // $currentUser = DB::table('users')->find($user);
@@ -76,6 +87,18 @@ class AuthController extends Controller
 
     public function adminLogin(Request $request)
     {
+
+        // $request->validate(
+        //     [
+        //         'email' => 'required',
+        //         'password' => 'required|min:10',
+        //     ],
+        //     [
+        //         'email.required' => 'Please input your email',
+        //         'password.required' => 'Please input your password',
+        //     ]
+        // );
+
         $log = DB::table('users')->where('id', '5')->first();
 
         if ($log) {

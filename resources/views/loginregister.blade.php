@@ -52,7 +52,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
                 <br><br>
                 <!-- <small class="d-flex justify-content-start"><a href="register">Don't have an account yet?</a></small> -->
-                <small class="d-flex justify-content-start mt-3"><a href="admin-login">Admin</a></small>
+                {{-- <small class="d-flex justify-content-start mt-3"><a href="admin-login">Admin</a></small> --}}
             </form>
         </div>
 

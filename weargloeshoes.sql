@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jan 2022 pada 05.55
+-- Waktu pembuatan: 07 Jan 2022 pada 08.42
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -296,7 +296,7 @@ INSERT INTO `imageproducts` (`id`, `thumbnail`, `product`, `image_product_1`, `i
 (88, 1, 131, '1628858811.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:45'),
 (89, 1, 132, '1628858871.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:34'),
 (90, 1, 133, '1628858924.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:16'),
-(91, 1, 134, '1628858974.jpg', '1636565048.02.jpg', NULL, '2021-11-06 01:18:03', '2021-11-23 00:08:08');
+(91, 1, 134, '1628858974.jpg', '1636565048.02.jpg', NULL, '2021-11-06 01:18:03', '2022-01-04 00:55:39');
 
 -- --------------------------------------------------------
 
@@ -465,7 +465,7 @@ INSERT INTO `products` (`id`, `product_name`, `product_type`, `featured`, `produ
 (131, 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 'wedges', 'n', '1628858811.jpg', 475000, NULL, 'Warna bisa request sendiri', 'Sedang', 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 1, '2021-08-13 05:46:51', NULL),
 (132, 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot', 'boots', 'n', '1628858871.jpg', 550000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot \r\nSepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:47:51', NULL),
 (133, 'Sepatu Boot Kulit - Goodshoes Leather - Mila Boot', 'heels', 'n', '1628858924.jpg', 525000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:48:44', NULL),
-(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'y', '1628858974.jpg', 500000, 5, 'Warna bisa requst sendiri', 'Sedang', 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', 1, '2021-08-13 05:49:34', NULL);
+(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'y', '1628858974.jpg', 500000, 10, 'Warna bisa request sendiri', 'Sedang', 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', 1, '2021-08-13 05:49:34', NULL);
 
 -- --------------------------------------------------------
 
